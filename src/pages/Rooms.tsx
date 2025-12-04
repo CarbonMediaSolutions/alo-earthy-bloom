@@ -8,7 +8,7 @@ import { useEffect } from "react";
 
 // Images
 import roomPreview from "@/assets/room-preview.png";
-import room1 from "@/assets/room-1.jpg";
+import room1Main from "@/assets/room1-1.png";
 import roomDetail1 from "@/assets/room-detail-1.png";
 import roomDetail2 from "@/assets/room-detail-2.png";
 import roomDetail3 from "@/assets/room-detail-3.png";
@@ -23,7 +23,7 @@ const rooms = [
   {
     name: "Room 1",
     description: "A spacious room with elegant decor and stunning farm views.",
-    image: room1,
+    image: room1Main,
     price: "R1,650",
     sleeps: 2,
     beds: "1 Queen Bed",
