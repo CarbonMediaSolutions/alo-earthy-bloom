@@ -6,29 +6,33 @@
 
 @layer base {
   :root {
-    /* Aló Accommodation Color Palette */
-    --background: 30 33% 97%; /* Soft Cream #F7F3EF */
+    /* Aló Accommodation Color Palette - Boutique Luxury */
+    --background: 0 0% 100%; /* White */
     --foreground: 0 0% 20%; /* Soft Charcoal #333333 */
 
-    --card: 0 0% 100%;
+    --card: 0 0% 100%; /* White */
     --card-foreground: 0 0% 20%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 20%;
 
-    /* Earth Olive Green */
+    /* Earth Olive Green - Primary Brand Color */
     --primary: 102 12% 50%; /* #7C8C74 */
     --primary-foreground: 0 0% 100%;
 
-    /* Warm Beige */
+    /* Warm Beige - Section Backgrounds */
     --secondary: 27 40% 85%; /* #EAD8C8 */
     --secondary-foreground: 0 0% 20%;
 
-    /* Soft Cream for muted */
+    /* Soft Cream */
+    --cream: 30 33% 97%; /* #F7F3EF */
+    --cream-foreground: 0 0% 20%;
+
+    /* Muted text */
     --muted: 30 33% 97%;
     --muted-foreground: 0 0% 45%;
 
-    /* Deep Forest Green for accent */
+    /* Deep Forest Green - Accent */
     --accent: 105 10% 33%; /* #4E5C4B */
     --accent-foreground: 0 0% 100%;
 
@@ -45,12 +49,10 @@
 
     --radius: 0.5rem;
 
-    /* Custom spacing */
-    --section-padding: 6rem;
-    
-    /* Shadows */
+    /* Shadows - Luxury feel */
     --shadow-soft: 0 4px 20px -4px hsl(27 40% 85% / 0.5);
-    --shadow-card: 0 8px 30px -8px hsl(0 0% 0% / 0.1);
+    --shadow-card: 0 8px 40px -8px hsl(0 0% 0% / 0.08);
+    --shadow-hover: 0 12px 50px -12px hsl(0 0% 0% / 0.12);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -77,6 +79,9 @@
 
     --secondary: 27 20% 25%;
     --secondary-foreground: 30 33% 97%;
+
+    --cream: 0 0% 18%;
+    --cream-foreground: 30 33% 97%;
 
     --muted: 0 0% 25%;
     --muted-foreground: 0 0% 65%;
@@ -109,13 +114,13 @@
 }
 
 @layer components {
-  /* Hero overlay */
+  /* Hero overlay - soft olive */
   .hero-overlay {
-    @apply absolute inset-0 bg-gradient-to-b from-accent/30 via-accent/20 to-accent/40;
+    @apply absolute inset-0 bg-gradient-to-b from-accent/25 via-accent/20 to-accent/35;
   }
 
   /* Section backgrounds */
-  .section-cream {
+  .section-white {
     @apply bg-background;
   }
 
@@ -123,8 +128,17 @@
     @apply bg-secondary;
   }
 
-  .section-white {
-    @apply bg-card;
+  .section-cream {
+    background-color: hsl(var(--cream));
+  }
+
+  /* Large section spacing */
+  .section-spacing {
+    @apply py-24 md:py-32 lg:py-36;
+  }
+
+  .section-spacing-sm {
+    @apply py-16 md:py-24;
   }
 
   /* Link underline animation */
@@ -140,9 +154,15 @@
     @apply scale-x-100 origin-bottom-left;
   }
 
-  /* Card hover effect */
+  /* Card hover effect - luxury lift */
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-card hover:-translate-y-1;
+    @apply transition-all duration-300 ease-out;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .card-hover:hover {
+    box-shadow: var(--shadow-hover);
+    @apply -translate-y-2;
   }
 
   /* Image zoom on hover */
@@ -151,23 +171,37 @@
   }
   
   .image-zoom img {
-    @apply transition-transform duration-500 ease-out;
+    @apply transition-transform duration-700 ease-out;
   }
   
   .image-zoom:hover img {
-    @apply scale-105;
+    @apply scale-110;
+  }
+
+  /* Elegant label styling */
+  .section-label {
+    @apply font-body text-sm uppercase tracking-[0.2em] text-primary mb-4 block font-semibold;
+  }
+
+  /* Content container max width */
+  .content-narrow {
+    @apply max-w-3xl mx-auto;
+  }
+
+  .content-wide {
+    @apply max-w-6xl mx-auto;
   }
 }
 
 @layer utilities {
   .animate-fade-up {
-    animation: fadeUp 0.6s ease-out forwards;
+    animation: fadeUp 0.8s ease-out forwards;
   }
 
   @keyframes fadeUp {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(30px);
     }
     to {
       opacity: 1;
@@ -176,7 +210,7 @@
   }
 
   .animate-fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
+    animation: fadeIn 1s ease-out forwards;
   }
 
   @keyframes fadeIn {
@@ -199,5 +233,13 @@
   }
   .delay-400 {
     animation-delay: 400ms;
+  }
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+
+  /* Text balance for headings */
+  .text-balance {
+    text-wrap: balance;
   }
 }

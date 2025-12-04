@@ -7,9 +7,9 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1.5rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1280px",
       },
     },
     extend: {
@@ -43,6 +43,10 @@ export default {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
+        cream: {
+          DEFAULT: "hsl(var(--cream))",
+          foreground: "hsl(var(--cream-foreground))",
+        },
         clay: {
           DEFAULT: "hsl(var(--clay))",
           foreground: "hsl(var(--clay-foreground))",
@@ -74,6 +78,7 @@ export default {
       boxShadow: {
         soft: "var(--shadow-soft)",
         card: "var(--shadow-card)",
+        hover: "var(--shadow-hover)",
       },
       keyframes: {
         "accordion-down": {
@@ -85,7 +90,7 @@ export default {
           to: { height: "0" },
         },
         "fade-up": {
-          from: { opacity: "0", transform: "translateY(20px)" },
+          from: { opacity: "0", transform: "translateY(30px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
         "fade-in": {
@@ -96,12 +101,13 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-up": "fade-up 0.6s ease-out forwards",
-        "fade-in": "fade-in 0.8s ease-out forwards",
+        "fade-up": "fade-up 0.8s ease-out forwards",
+        "fade-in": "fade-in 1s ease-out forwards",
       },
       spacing: {
         section: "6rem",
         "section-lg": "8rem",
+        "section-xl": "10rem",
       },
     },
   },
