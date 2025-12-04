@@ -143,7 +143,7 @@ function RoomCard({ name, description, images, price, sleeps, beds }: RoomCardPr
         <img
           src={images[currentIndex]}
           alt={`${name} - Image ${currentIndex + 1}`}
-          className="w-full h-full object-cover transition-opacity duration-300"
+          className="w-full h-full object-cover transition-opacity duration-150"
         />
         
         {/* Navigation arrows - only show if multiple images */}
