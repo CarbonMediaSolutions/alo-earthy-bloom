@@ -14,14 +14,16 @@ import room1_3 from "@/assets/room1-3.png";
 import room1_4 from "@/assets/room1-4.png";
 import room1_5 from "@/assets/room1-5.png";
 import room1_6 from "@/assets/room1-6.png";
-import roomDetail1 from "@/assets/room-detail-1.png";
-import roomDetail2 from "@/assets/room-detail-2.png";
-import roomDetail3 from "@/assets/room-detail-3.png";
+import room2 from "@/assets/room2.png";
+import room3 from "@/assets/room3.png";
+import room4 from "@/assets/room4.png";
+import room5 from "@/assets/room5.png";
+import room6 from "@/assets/room6.png";
+import room7 from "@/assets/room7.png";
+import room8 from "@/assets/room8.png";
+import room9 from "@/assets/room9.png";
+import room10 from "@/assets/room10.png";
 import groomsRoom from "@/assets/grooms-room.png";
-import gallery1 from "@/assets/gallery-1.png";
-import gallery2 from "@/assets/gallery-2.png";
-import gallery3 from "@/assets/gallery-3.png";
-import interiorDetail from "@/assets/interior-detail.png";
 
 // Room data with updated prices and multiple images
 const rooms = [
@@ -36,7 +38,7 @@ const rooms = [
   {
     name: "Room 2",
     description: "Classic comfort with modern amenities and garden views.",
-    images: [roomDetail2],
+    images: [room2],
     price: "R1,100",
     sleeps: 2,
     beds: "1 Queen Bed",
@@ -44,7 +46,7 @@ const rooms = [
   {
     name: "Room 3",
     description: "Light-filled retreat perfect for a peaceful getaway.",
-    images: [roomDetail3],
+    images: [room3],
     price: "R1,100",
     sleeps: 2,
     beds: "1 Queen Bed",
@@ -52,7 +54,7 @@ const rooms = [
   {
     name: "Room 4",
     description: "Cozy and intimate with countryside charm throughout.",
-    images: [gallery1],
+    images: [room4],
     price: "R1,485",
     sleeps: 2,
     beds: "1 King Bed",
@@ -60,7 +62,7 @@ const rooms = [
   {
     name: "Room 5",
     description: "Elegant furnishings creating a tranquil atmosphere.",
-    images: [roomDetail1],
+    images: [room5],
     price: "R1,100",
     sleeps: 2,
     beds: "1 Queen Bed",
@@ -68,7 +70,7 @@ const rooms = [
   {
     name: "Room 6",
     description: "Wake up to birdsong and beautiful countryside views.",
-    images: [gallery2],
+    images: [room6],
     price: "R1,100",
     sleeps: 2,
     beds: "1 Queen Bed",
@@ -76,7 +78,7 @@ const rooms = [
   {
     name: "Room 7",
     description: "Peaceful sanctuary with soft linens and warm decor.",
-    images: [gallery3],
+    images: [room7],
     price: "R1,100",
     sleeps: 2,
     beds: "1 Queen Bed",
@@ -84,7 +86,7 @@ const rooms = [
   {
     name: "Room 8",
     description: "Comfortable space designed for rest and relaxation.",
-    images: [interiorDetail],
+    images: [room8],
     price: "R1,100",
     sleeps: 2,
     beds: "1 Queen Bed",
@@ -92,7 +94,7 @@ const rooms = [
   {
     name: "Room 9",
     description: "Charming room with thoughtful details throughout.",
-    images: [roomPreview],
+    images: [room9],
     price: "R1,100",
     sleeps: 2,
     beds: "1 Queen Bed",
@@ -100,7 +102,7 @@ const rooms = [
   {
     name: "Room 10",
     description: "Serene escape with views of the farm gardens.",
-    images: [roomDetail2],
+    images: [room10],
     price: "R1,100",
     sleeps: 2,
     beds: "1 Queen Bed",
@@ -108,7 +110,7 @@ const rooms = [
   {
     name: "Room 11",
     description: "Quiet retreat perfect for unwinding after exploring.",
-    images: [roomDetail3],
+    images: [roomPreview],
     price: "R1,100",
     sleeps: 2,
     beds: "1 Queen Bed",
