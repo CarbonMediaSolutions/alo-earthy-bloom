@@ -3,7 +3,7 @@ import { Facebook, Instagram } from "lucide-react";
 
 const navLinks = [
   { name: "Home", path: "/" },
-  { name: "Our Rooms", path: "/rooms" },
+  { name: "Rooms", path: "/rooms" },
   { name: "About", path: "/about" },
   { name: "Contact", path: "/contact" },
   { name: "House Rules", path: "/house-rules" },
@@ -11,34 +11,34 @@ const navLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-card py-16 border-t border-border">
+    <footer className="bg-background py-20 border-t border-border">
       <div className="container">
         <div className="flex flex-col items-center">
-          {/* Logo */}
-          <div className="w-20 h-20 rounded-full border-2 border-primary/30 flex items-center justify-center font-heading text-4xl text-primary mb-8">
-            A
+          {/* Centered Circle Logo */}
+          <div className="w-24 h-24 rounded-full border-2 border-primary flex items-center justify-center mb-10">
+            <span className="font-heading text-4xl text-primary font-medium">Aló</span>
           </div>
 
-          {/* Navigation */}
-          <nav className="flex flex-wrap justify-center gap-6 md:gap-10 mb-8">
+          {/* Navigation Links */}
+          <nav className="flex flex-wrap justify-center gap-8 md:gap-12 mb-10">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className="font-body text-sm text-muted-foreground hover:text-primary transition-colors"
+                className="font-body text-sm text-primary hover:text-accent transition-colors duration-300 uppercase tracking-widest"
               >
                 {link.name}
               </Link>
             ))}
           </nav>
 
-          {/* Social Links */}
-          <div className="flex gap-4 mb-8">
+          {/* Social Icons */}
+          <div className="flex gap-4 mb-10">
             <a
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-foreground/60 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              className="w-11 h-11 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               aria-label="Facebook"
             >
               <Facebook size={18} />
@@ -47,15 +47,15 @@ export function Footer() {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-foreground/60 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              className="w-11 h-11 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               aria-label="Instagram"
             >
               <Instagram size={18} />
             </a>
           </div>
 
-          {/* Copyright */}
-          <p className="font-body text-sm text-muted-foreground">
+          {/* Established */}
+          <p className="font-body text-sm text-primary/70 tracking-widest">
             Est. 2022
           </p>
         </div>
