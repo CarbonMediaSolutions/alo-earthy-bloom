@@ -24,6 +24,10 @@
     --secondary: 27 40% 85%; /* #EAD8C8 */
     --secondary-foreground: 0 0% 20%;
 
+    /* Deeper Warm Beige - Alternate sections */
+    --secondary-deep: 27 35% 78%; /* Slightly darker beige */
+    --secondary-deep-foreground: 0 0% 20%;
+
     /* Soft Cream */
     --cream: 30 33% 97%; /* #F7F3EF */
     --cream-foreground: 0 0% 20%;
@@ -52,7 +56,8 @@
     /* Shadows - Luxury feel */
     --shadow-soft: 0 4px 20px -4px hsl(27 40% 85% / 0.5);
     --shadow-card: 0 8px 40px -8px hsl(0 0% 0% / 0.08);
-    --shadow-hover: 0 12px 50px -12px hsl(0 0% 0% / 0.12);
+    --shadow-hover: 0 16px 60px -12px hsl(0 0% 0% / 0.15);
+    --shadow-gallery: 0 12px 40px -8px hsl(0 0% 0% / 0.12);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -79,6 +84,9 @@
 
     --secondary: 27 20% 25%;
     --secondary-foreground: 30 33% 97%;
+
+    --secondary-deep: 27 18% 20%;
+    --secondary-deep-foreground: 30 33% 97%;
 
     --cream: 0 0% 18%;
     --cream-foreground: 30 33% 97%;
@@ -114,9 +122,20 @@
 }
 
 @layer components {
-  /* Hero overlay - soft olive */
+  /* Hero overlay - stronger for better readability */
   .hero-overlay {
-    @apply absolute inset-0 bg-gradient-to-b from-accent/25 via-accent/20 to-accent/35;
+    @apply absolute inset-0;
+    background: linear-gradient(
+      to bottom,
+      hsl(105 10% 33% / 0.35) 0%,
+      hsl(105 10% 33% / 0.25) 40%,
+      hsl(105 10% 33% / 0.45) 100%
+    );
+  }
+
+  /* Hero text shadow for better readability */
+  .hero-text-shadow {
+    text-shadow: 0 2px 20px hsl(0 0% 0% / 0.3), 0 4px 40px hsl(0 0% 0% / 0.2);
   }
 
   /* Section backgrounds */
@@ -128,17 +147,31 @@
     @apply bg-secondary;
   }
 
+  .section-beige-deep {
+    background-color: hsl(var(--secondary-deep));
+  }
+
   .section-cream {
     background-color: hsl(var(--cream));
   }
 
   /* Large section spacing */
   .section-spacing {
-    @apply py-24 md:py-32 lg:py-36;
+    @apply py-24 md:py-32 lg:py-40;
   }
 
   .section-spacing-sm {
     @apply py-16 md:py-24;
+  }
+
+  /* Section divider - subtle top border */
+  .section-divider {
+    @apply relative;
+  }
+  
+  .section-divider::before {
+    content: '';
+    @apply absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-primary/20;
   }
 
   /* Link underline animation */
@@ -156,13 +189,13 @@
 
   /* Card hover effect - luxury lift */
   .card-hover {
-    @apply transition-all duration-300 ease-out;
+    @apply transition-all duration-500 ease-out;
     box-shadow: var(--shadow-card);
   }
   
   .card-hover:hover {
     box-shadow: var(--shadow-hover);
-    @apply -translate-y-2;
+    @apply -translate-y-3;
   }
 
   /* Image zoom on hover */
@@ -176,6 +209,12 @@
   
   .image-zoom:hover img {
     @apply scale-110;
+  }
+
+  /* Gallery image with shadow */
+  .gallery-image {
+    box-shadow: var(--shadow-gallery);
+    @apply rounded-lg overflow-hidden;
   }
 
   /* Elegant label styling */

@@ -47,6 +47,10 @@ export default {
           DEFAULT: "hsl(var(--cream))",
           foreground: "hsl(var(--cream-foreground))",
         },
+        "secondary-deep": {
+          DEFAULT: "hsl(var(--secondary-deep))",
+          foreground: "hsl(var(--secondary-deep-foreground))",
+        },
         clay: {
           DEFAULT: "hsl(var(--clay))",
           foreground: "hsl(var(--clay-foreground))",
