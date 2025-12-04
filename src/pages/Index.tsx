@@ -85,18 +85,18 @@ function TwoColumnSection({
   return (
     <section className={cn("section-spacing", bgClass)}>
       <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+          {/* Image - Cinematic 3:2 aspect ratio */}
           <div
             className={cn(
-              "image-zoom rounded-lg overflow-hidden shadow-card",
+              "image-zoom rounded-xl overflow-hidden shadow-hover",
               reverse && "lg:order-2"
             )}
           >
             <img
               src={image}
               alt={imageAlt}
-              className="w-full h-[400px] lg:h-[550px] object-cover"
+              className="w-full aspect-[3/2] object-cover"
             />
           </div>
 
@@ -127,12 +127,16 @@ interface FacilityCardProps {
 
 function FacilityCard({ icon: Icon, title, description }: FacilityCardProps) {
   return (
-    <div className="bg-background p-8 rounded-lg card-hover text-center group">
-      <div className="w-14 h-14 rounded-full bg-secondary flex items-center justify-center mx-auto mb-5 group-hover:bg-primary transition-colors duration-300">
-        <Icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
+    <div className="bg-background p-10 rounded-xl card-hover text-center group">
+      {/* Larger icon container with stronger visual weight */}
+      <div className="w-20 h-20 rounded-full bg-secondary/80 flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
+        <Icon 
+          className="w-9 h-9 text-primary group-hover:text-primary-foreground transition-colors duration-300" 
+          strokeWidth={1.5}
+        />
       </div>
-      <h3 className="font-heading text-xl text-foreground mb-2">{title}</h3>
-      <p className="font-body text-muted-foreground text-sm">{description}</p>
+      <h3 className="font-heading text-xl text-foreground mb-3">{title}</h3>
+      <p className="font-body text-muted-foreground text-sm leading-relaxed">{description}</p>
     </div>
   );
 }
@@ -146,19 +150,19 @@ const Index = () => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
           style={{ backgroundImage: `url(${heroFarm})` }}
         />
         
-        {/* Overlay */}
+        {/* Stronger Overlay */}
         <div className="hero-overlay" />
 
-        {/* Content */}
+        {/* Content with text shadow */}
         <div className="relative z-10 container text-center px-4">
-          <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl text-primary-foreground mb-6 animate-fade-up opacity-0">
+          <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl text-primary-foreground mb-6 animate-fade-up opacity-0 hero-text-shadow">
             Aló Accommodation
           </h1>
-          <p className="font-body text-primary-foreground/90 text-xl md:text-2xl mb-10 animate-fade-up opacity-0 delay-200 tracking-wide">
+          <p className="font-body text-primary-foreground text-xl md:text-2xl mb-12 animate-fade-up opacity-0 delay-200 tracking-wide hero-text-shadow">
             Accommodation nestled in the farmlands of Durbanville
           </p>
           
@@ -174,10 +178,10 @@ const Index = () => {
       </section>
 
       {/* SECTION 2 — WELCOME (White) */}
-      <section className="section-spacing section-white">
+      <section className="section-spacing section-white section-divider">
         <div className="container">
           <div className="text-center content-narrow">
-            <span className="section-label animate-fade-up opacity-0">Welcome to Aló</span>
+            <span className="section-label">Welcome to Aló</span>
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-foreground mb-8 leading-tight text-balance">
               Accommodation Nestled in the Farmlands of Durbanville
             </h2>
@@ -214,7 +218,7 @@ const Index = () => {
         bgClass="section-white"
       />
 
-      {/* SECTION 5 — GROOM'S ROOM (Beige) */}
+      {/* SECTION 5 — GROOM'S ROOM (Deeper Beige for contrast) */}
       <TwoColumnSection
         label="Take a Look At"
         title="Our Groom's Room"
@@ -223,33 +227,37 @@ const Index = () => {
         imageAlt="Groom's Room at Aló Accommodation"
         ctaText="Find Out More"
         ctaLink="/rooms"
-        bgClass="section-beige"
+        bgClass="section-beige-deep"
       />
 
       {/* SECTION 6 — BIG CTA SECTION */}
       <section
-        className="relative py-32 md:py-40 overflow-hidden"
-        style={{ backgroundImage: `url(${ctaBackground})` }}
+        className="relative py-36 md:py-48 overflow-hidden"
       >
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${ctaBackground})` }} />
-        <div className="absolute inset-0 bg-accent/50" />
+        <div className="absolute inset-0 bg-accent/55" />
         <div className="relative z-10 container text-center">
-          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-primary-foreground mb-6 text-balance">
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-primary-foreground mb-6 text-balance hero-text-shadow">
             Ready to Experience Aló?
           </h2>
-          <p className="font-body text-primary-foreground/90 text-lg md:text-xl max-w-2xl mx-auto mb-10">
+          <p className="font-body text-primary-foreground text-lg md:text-xl max-w-2xl mx-auto mb-12 hero-text-shadow">
             Book your stay and discover the peace and tranquility of farm life in Durbanville.
           </p>
-          <Button variant="hero" size="lg" asChild>
+          {/* Larger, more prominent CTA button */}
+          <Button 
+            variant="hero" 
+            className="h-16 px-12 text-lg font-semibold tracking-wider shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300" 
+            asChild
+          >
             <Link to="/contact">Contact Us</Link>
           </Button>
         </div>
       </section>
 
       {/* SECTION 7 — PROPERTY FACILITIES (White) */}
-      <section className="section-spacing section-white">
+      <section className="section-spacing section-white section-divider">
         <div className="container">
-          <div className="text-center mb-16">
+          <div className="text-center mb-20">
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
               Property Facilities
             </h2>
@@ -258,7 +266,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 content-wide">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 content-wide">
             {facilities.map((facility) => (
               <FacilityCard key={facility.title} {...facility} />
             ))}
@@ -266,16 +274,16 @@ const Index = () => {
         </div>
       </section>
 
-      {/* SECTION 8 — GALLERY (Beige) */}
-      <section className="section-spacing section-beige">
+      {/* SECTION 8 — GALLERY (Beige with more spacing) */}
+      <section className="py-28 md:py-40 section-beige">
         <div className="container">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-foreground">
               Gallery
             </h2>
           </div>
           
-          <div className="px-8 md:px-16">
+          <div className="px-12 md:px-20">
             <GalleryCarousel images={galleryImages} />
           </div>
         </div>
