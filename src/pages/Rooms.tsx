@@ -225,7 +225,7 @@ function RoomCard({ name, description, images, price, sleeps, beds }: RoomCardPr
         </p>
         
         <Button variant="outline" size="default" className="w-full" asChild>
-          <Link to="/contact">Book Now</Link>
+          <a href="#booking">Book Now</a>
         </Button>
       </div>
     </div>
