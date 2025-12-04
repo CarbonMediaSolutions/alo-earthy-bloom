@@ -2,13 +2,18 @@ import { Link } from "react-router-dom";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { Wifi, Car, Users, Bed, Coffee, Bath, UtensilsCrossed, Refrigerator } from "lucide-react";
+import { Wifi, Car, Users, Bed, Coffee, Bath, Refrigerator, ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // Images
 import roomPreview from "@/assets/room-preview.png";
-import room1Main from "@/assets/room1-1.png";
+import room1_1 from "@/assets/room1-1.png";
+import room1_2 from "@/assets/room1-2.png";
+import room1_3 from "@/assets/room1-3.png";
+import room1_4 from "@/assets/room1-4.png";
+import room1_5 from "@/assets/room1-5.png";
+import room1_6 from "@/assets/room1-6.png";
 import roomDetail1 from "@/assets/room-detail-1.png";
 import roomDetail2 from "@/assets/room-detail-2.png";
 import roomDetail3 from "@/assets/room-detail-3.png";
@@ -18,12 +23,12 @@ import gallery2 from "@/assets/gallery-2.png";
 import gallery3 from "@/assets/gallery-3.png";
 import interiorDetail from "@/assets/interior-detail.png";
 
-// Room data with updated prices
+// Room data with updated prices and multiple images
 const rooms = [
   {
     name: "Room 1",
     description: "A spacious room with elegant decor and stunning farm views.",
-    image: room1Main,
+    images: [room1_1, room1_2, room1_3, room1_4, room1_5, room1_6],
     price: "R1,650",
     sleeps: 2,
     beds: "1 Queen Bed",
@@ -31,7 +36,7 @@ const rooms = [
   {
     name: "Room 2",
     description: "Classic comfort with modern amenities and garden views.",
-    image: roomDetail2,
+    images: [roomDetail2],
     price: "R1,100",
     sleeps: 2,
     beds: "1 Queen Bed",
@@ -39,7 +44,7 @@ const rooms = [
   {
     name: "Room 3",
     description: "Light-filled retreat perfect for a peaceful getaway.",
-    image: roomDetail3,
+    images: [roomDetail3],
     price: "R1,100",
     sleeps: 2,
     beds: "1 Queen Bed",
@@ -47,7 +52,7 @@ const rooms = [
   {
     name: "Room 4",
     description: "Cozy and intimate with countryside charm throughout.",
-    image: gallery1,
+    images: [gallery1],
     price: "R1,485",
     sleeps: 2,
     beds: "1 King Bed",
@@ -55,7 +60,7 @@ const rooms = [
   {
     name: "Room 5",
     description: "Elegant furnishings creating a tranquil atmosphere.",
-    image: roomDetail1,
+    images: [roomDetail1],
     price: "R1,100",
     sleeps: 2,
     beds: "1 Queen Bed",
@@ -63,7 +68,7 @@ const rooms = [
   {
     name: "Room 6",
     description: "Wake up to birdsong and beautiful countryside views.",
-    image: gallery2,
+    images: [gallery2],
     price: "R1,100",
     sleeps: 2,
     beds: "1 Queen Bed",
@@ -71,7 +76,7 @@ const rooms = [
   {
     name: "Room 7",
     description: "Peaceful sanctuary with soft linens and warm decor.",
-    image: gallery3,
+    images: [gallery3],
     price: "R1,100",
     sleeps: 2,
     beds: "1 Queen Bed",
@@ -79,7 +84,7 @@ const rooms = [
   {
     name: "Room 8",
     description: "Comfortable space designed for rest and relaxation.",
-    image: interiorDetail,
+    images: [interiorDetail],
     price: "R1,100",
     sleeps: 2,
     beds: "1 Queen Bed",
@@ -87,7 +92,7 @@ const rooms = [
   {
     name: "Room 9",
     description: "Charming room with thoughtful details throughout.",
-    image: roomPreview,
+    images: [roomPreview],
     price: "R1,100",
     sleeps: 2,
     beds: "1 Queen Bed",
@@ -95,7 +100,7 @@ const rooms = [
   {
     name: "Room 10",
     description: "Serene escape with views of the farm gardens.",
-    image: roomDetail2,
+    images: [roomDetail2],
     price: "R1,100",
     sleeps: 2,
     beds: "1 Queen Bed",
@@ -103,7 +108,7 @@ const rooms = [
   {
     name: "Room 11",
     description: "Quiet retreat perfect for unwinding after exploring.",
-    image: roomDetail3,
+    images: [roomDetail3],
     price: "R1,100",
     sleeps: 2,
     beds: "1 Queen Bed",
@@ -113,22 +118,72 @@ const rooms = [
 interface RoomCardProps {
   name: string;
   description: string;
-  image: string;
+  images: string[];
   price: string;
   sleeps: number;
   beds: string;
 }
 
-function RoomCard({ name, description, image, price, sleeps, beds }: RoomCardProps) {
+function RoomCard({ name, description, images, price, sleeps, beds }: RoomCardProps) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const hasMultipleImages = images.length > 1;
+
+  const nextImage = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
   return (
     <div className="bg-background rounded-xl overflow-hidden card-hover group">
-      {/* Image */}
-      <div className="image-zoom aspect-[4/3]">
+      {/* Image Carousel */}
+      <div className="relative aspect-[4/3] overflow-hidden">
         <img
-          src={image}
-          alt={name}
-          className="w-full h-full object-cover"
+          src={images[currentIndex]}
+          alt={`${name} - Image ${currentIndex + 1}`}
+          className="w-full h-full object-cover transition-opacity duration-300"
         />
+        
+        {/* Navigation arrows - only show if multiple images */}
+        {hasMultipleImages && (
+          <>
+            <button
+              onClick={prevImage}
+              className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background"
+              aria-label="Previous image"
+            >
+              <ChevronLeft size={18} className="text-foreground" />
+            </button>
+            <button
+              onClick={nextImage}
+              className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background"
+              aria-label="Next image"
+            >
+              <ChevronRight size={18} className="text-foreground" />
+            </button>
+          </>
+        )}
+        
+        {/* Dots indicator */}
+        {hasMultipleImages && (
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={cn(
+                  "w-2 h-2 rounded-full transition-all",
+                  index === currentIndex
+                    ? "bg-background w-4"
+                    : "bg-background/60 hover:bg-background/80"
+                )}
+                aria-label={`Go to image ${index + 1}`}
+              />
+            ))}
+          </div>
+        )}
       </div>
       
       {/* Content */}
