@@ -7,6 +7,7 @@ const navLinks = [
   { name: "About", path: "/about" },
   { name: "Contact", path: "/contact" },
   { name: "House Rules", path: "/house-rules" },
+  { name: "Terms & Conditions", path: "/terms-and-conditions" },
 ];
 
 export function Footer() {
