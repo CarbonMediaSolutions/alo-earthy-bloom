@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Rooms from "./pages/Rooms";
 import Contact from "./pages/Contact";
 import HouseRules from "./pages/HouseRules";
+import TermsAndConditions from "./pages/TermsAndConditions";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/rooms" element={<Rooms />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/house-rules" element={<HouseRules />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
