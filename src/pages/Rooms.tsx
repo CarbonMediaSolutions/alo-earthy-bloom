@@ -81,6 +81,14 @@ import room10_2 from "@/assets/room10-2.png";
 import room10_3 from "@/assets/room10-3.png";
 import room10_4 from "@/assets/room10-4.png";
 import room10_5 from "@/assets/room10-5.png";
+import room11_1 from "@/assets/room11-1.png";
+import room11_2 from "@/assets/room11-2.png";
+import room11_3 from "@/assets/room11-3.png";
+import room11_4 from "@/assets/room11-4.png";
+import room11_5 from "@/assets/room11-5.png";
+import room11_6 from "@/assets/room11-6.png";
+import room11_7 from "@/assets/room11-7.png";
+import room11_8 from "@/assets/room11-8.png";
 import groomsRoom from "@/assets/grooms-room.png";
 
 // Room data with updated prices and multiple images
@@ -168,7 +176,7 @@ const rooms = [
   {
     name: "Room 11",
     description: "Quiet retreat perfect for unwinding after exploring.",
-    images: [roomPreview],
+    images: [room11_1, room11_2, room11_3, room11_4, room11_5, room11_6, room11_7, room11_8],
     price: "R1,100",
     sleeps: 2,
     beds: "1 Queen Bed",
