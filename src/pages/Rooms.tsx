@@ -42,7 +42,14 @@ import room4_8 from "@/assets/room4-8.png";
 import room4_9 from "@/assets/room4-9.png";
 import room4_10 from "@/assets/room4-10.png";
 import room5 from "@/assets/room5.png";
-import room6 from "@/assets/room6.png";
+import room6_1 from "@/assets/room6-1.png";
+import room6_2 from "@/assets/room6-2.png";
+import room6_3 from "@/assets/room6-3.png";
+import room6_4 from "@/assets/room6-4.png";
+import room6_5 from "@/assets/room6-5.png";
+import room6_6 from "@/assets/room6-6.png";
+import room6_7 from "@/assets/room6-7.png";
+import room6_8 from "@/assets/room6-8.png";
 import room7 from "@/assets/room7.png";
 import room8 from "@/assets/room8.png";
 import room9 from "@/assets/room9.png";
@@ -93,11 +100,11 @@ const rooms = [
   },
   {
     name: "Room 6",
-    description: "Wake up to birdsong and beautiful countryside views.",
-    images: [room6],
+    description: "Cozy room with kitchenette, private bathroom, and inside seating area.",
+    images: [room6_1, room6_2, room6_3, room6_4, room6_5, room6_6, room6_7, room6_8],
     price: "R1,100",
     sleeps: 2,
-    beds: "1 Queen Bed",
+    beds: "1 Double Bed",
   },
   {
     name: "Room 7",
