@@ -140,13 +140,19 @@ function RoomCard({ name, description, images, price, sleeps, beds }: RoomCardPr
 
   return (
     <div className="bg-background rounded-xl overflow-hidden card-hover group">
-      {/* Image Carousel */}
+      {/* Image Carousel - All images preloaded for instant transitions */}
       <div className="relative aspect-[4/3] overflow-hidden">
-        <img
-          src={images[currentIndex]}
-          alt={`${name} - Image ${currentIndex + 1}`}
-          className="w-full h-full object-cover transition-opacity duration-150"
-        />
+        {images.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`${name} - Image ${index + 1}`}
+            className={cn(
+              "absolute inset-0 w-full h-full object-cover transition-opacity duration-150",
+              index === currentIndex ? "opacity-100" : "opacity-0"
+            )}
+          />
+        ))}
         
         {/* Navigation arrows - only show if multiple images */}
         {hasMultipleImages && (
