@@ -141,7 +141,7 @@ function RoomCard({ name, description, images, price, sleeps, beds }: RoomCardPr
   return (
     <div className="bg-background rounded-xl overflow-hidden card-hover group">
       {/* Image Carousel - All images preloaded for instant transitions */}
-      <div className="relative aspect-[4/3] overflow-hidden">
+      <div className="relative aspect-[3/4] overflow-hidden">
         {images.map((image, index) => (
           <img
             key={index}
