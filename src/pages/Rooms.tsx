@@ -70,7 +70,12 @@ import room8_4 from "@/assets/room8-4.png";
 import room8_5 from "@/assets/room8-5.png";
 import room8_6 from "@/assets/room8-6.png";
 import room8_7 from "@/assets/room8-7.png";
-import room9 from "@/assets/room9.png";
+import room9_1 from "@/assets/room9-1.png";
+import room9_2 from "@/assets/room9-2.png";
+import room9_3 from "@/assets/room9-3.png";
+import room9_4 from "@/assets/room9-4.png";
+import room9_5 from "@/assets/room9-5.png";
+import room9_6 from "@/assets/room9-6.png";
 import room10_1 from "@/assets/room10-1.png";
 import room10_2 from "@/assets/room10-2.png";
 import room10_3 from "@/assets/room10-3.png";
@@ -147,7 +152,7 @@ const rooms = [
   {
     name: "Room 9",
     description: "Charming room with thoughtful details throughout.",
-    images: [room9],
+    images: [room9_1, room9_2, room9_3, room9_4, room9_5, room9_6],
     price: "R1,100",
     sleeps: 2,
     beds: "1 Queen Bed",
