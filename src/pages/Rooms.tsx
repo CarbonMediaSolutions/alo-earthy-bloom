@@ -71,7 +71,11 @@ import room8_5 from "@/assets/room8-5.png";
 import room8_6 from "@/assets/room8-6.png";
 import room8_7 from "@/assets/room8-7.png";
 import room9 from "@/assets/room9.png";
-import room10 from "@/assets/room10.png";
+import room10_1 from "@/assets/room10-1.png";
+import room10_2 from "@/assets/room10-2.png";
+import room10_3 from "@/assets/room10-3.png";
+import room10_4 from "@/assets/room10-4.png";
+import room10_5 from "@/assets/room10-5.png";
 import groomsRoom from "@/assets/grooms-room.png";
 
 // Room data with updated prices and multiple images
@@ -151,7 +155,7 @@ const rooms = [
   {
     name: "Room 10",
     description: "Serene escape with views of the farm gardens.",
-    images: [room10],
+    images: [room10_1, room10_2, room10_3, room10_4, room10_5],
     price: "R1,100",
     sleeps: 2,
     beds: "1 Queen Bed",
