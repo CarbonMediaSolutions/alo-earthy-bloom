@@ -14,7 +14,16 @@ import room1_3 from "@/assets/room1-3.png";
 import room1_4 from "@/assets/room1-4.png";
 import room1_5 from "@/assets/room1-5.png";
 import room1_6 from "@/assets/room1-6.png";
-import room2 from "@/assets/room2.png";
+import room2_1 from "@/assets/room2-1.png";
+import room2_2 from "@/assets/room2-2.png";
+import room2_3 from "@/assets/room2-3.png";
+import room2_4 from "@/assets/room2-4.png";
+import room2_5 from "@/assets/room2-5.png";
+import room2_6 from "@/assets/room2-6.png";
+import room2_7 from "@/assets/room2-7.png";
+import room2_8 from "@/assets/room2-8.png";
+import room2_9 from "@/assets/room2-9.png";
+import room2_10 from "@/assets/room2-10.png";
 import room3 from "@/assets/room3.png";
 import room4 from "@/assets/room4.png";
 import room5 from "@/assets/room5.png";
@@ -38,7 +47,7 @@ const rooms = [
   {
     name: "Room 2",
     description: "Classic comfort with modern amenities and garden views.",
-    images: [room2],
+    images: [room2_1, room2_2, room2_3, room2_4, room2_5, room2_6, room2_7, room2_8, room2_9, room2_10],
     price: "R1,100",
     sleeps: 2,
     beds: "1 Queen Bed",
