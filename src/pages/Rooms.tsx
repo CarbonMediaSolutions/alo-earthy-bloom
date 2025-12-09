@@ -41,7 +41,13 @@ import room4_7 from "@/assets/room4-7.png";
 import room4_8 from "@/assets/room4-8.png";
 import room4_9 from "@/assets/room4-9.png";
 import room4_10 from "@/assets/room4-10.png";
-import room5 from "@/assets/room5.png";
+import room5_1 from "@/assets/room5-1.png";
+import room5_2 from "@/assets/room5-2.png";
+import room5_3 from "@/assets/room5-3.png";
+import room5_4 from "@/assets/room5-4.png";
+import room5_5 from "@/assets/room5-5.png";
+import room5_6 from "@/assets/room5-6.png";
+import room5_7 from "@/assets/room5-7.png";
 import room6_1 from "@/assets/room6-1.png";
 import room6_2 from "@/assets/room6-2.png";
 import room6_3 from "@/assets/room6-3.png";
@@ -91,12 +97,12 @@ const rooms = [
     beds: "1 King Bed",
   },
   {
-    name: "Room 5",
-    description: "Elegant furnishings creating a tranquil atmosphere.",
-    images: [room5],
-    price: "R1,100",
+    name: "Groom's Room",
+    description: "Double-sized suite perfect for wedding parties. Fully equipped kitchenette, clothing rack, iron & ironing board, and space for 6 groomsmen to prepare.",
+    images: [room5_1, room5_2, room5_3, room5_4, room5_5, room5_6, room5_7],
+    price: "R1,500",
     sleeps: 2,
-    beds: "1 Queen Bed",
+    beds: "1 Double Bed",
   },
   {
     name: "Room 6",
