@@ -56,7 +56,13 @@ import room6_5 from "@/assets/room6-5.png";
 import room6_6 from "@/assets/room6-6.png";
 import room6_7 from "@/assets/room6-7.png";
 import room6_8 from "@/assets/room6-8.png";
-import room7 from "@/assets/room7.png";
+import room7_1 from "@/assets/room7-1.png";
+import room7_2 from "@/assets/room7-2.png";
+import room7_3 from "@/assets/room7-3.png";
+import room7_4 from "@/assets/room7-4.png";
+import room7_5 from "@/assets/room7-5.png";
+import room7_6 from "@/assets/room7-6.png";
+import room7_7 from "@/assets/room7-7.png";
 import room8 from "@/assets/room8.png";
 import room9 from "@/assets/room9.png";
 import room10 from "@/assets/room10.png";
@@ -115,7 +121,7 @@ const rooms = [
   {
     name: "Room 7",
     description: "Peaceful sanctuary with soft linens and warm decor.",
-    images: [room7],
+    images: [room7_1, room7_2, room7_3, room7_4, room7_5, room7_6, room7_7],
     price: "R1,100",
     sleeps: 2,
     beds: "1 Queen Bed",
