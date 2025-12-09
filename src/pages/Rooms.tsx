@@ -24,7 +24,13 @@ import room2_7 from "@/assets/room2-7.png";
 import room2_8 from "@/assets/room2-8.png";
 import room2_9 from "@/assets/room2-9.png";
 import room2_10 from "@/assets/room2-10.png";
-import room3 from "@/assets/room3.png";
+import room3_1 from "@/assets/room3-1.png";
+import room3_2 from "@/assets/room3-2.png";
+import room3_3 from "@/assets/room3-3.png";
+import room3_4 from "@/assets/room3-4.png";
+import room3_5 from "@/assets/room3-5.png";
+import room3_6 from "@/assets/room3-6.png";
+import room3_7 from "@/assets/room3-7.png";
 import room4 from "@/assets/room4.png";
 import room5 from "@/assets/room5.png";
 import room6 from "@/assets/room6.png";
@@ -55,7 +61,7 @@ const rooms = [
   {
     name: "Room 3",
     description: "Light-filled retreat perfect for a peaceful getaway.",
-    images: [room3],
+    images: [room3_1, room3_2, room3_3, room3_4, room3_5, room3_6, room3_7],
     price: "R1,100",
     sleeps: 2,
     beds: "1 Queen Bed",
