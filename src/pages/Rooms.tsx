@@ -462,38 +462,6 @@ const Rooms = () => {
         </div>
       </section>
 
-      {/* SECTION 5 — GROOM'S ROOM FEATURE */}
-      <section className="section-spacing section-beige">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Large Image */}
-            <div className="image-zoom rounded-xl overflow-hidden shadow-hover">
-              <img
-                src={groomsRoom}
-                alt="Groom's Room at Aló Accommodation"
-                className="w-full aspect-[4/3] object-cover"
-              />
-            </div>
-            
-            {/* Content */}
-            <div>
-              <span className="section-label">Rooms</span>
-              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 leading-tight">
-                Groom's Room
-              </h2>
-              <p className="font-body text-muted-foreground text-lg leading-relaxed mb-10">
-                Perfect for wedding parties, our Groom's Room offers a special space for the groom 
-                and his party to prepare for the big day. Featuring masculine decor, comfortable 
-                seating, and all the amenities needed for a memorable getting-ready experience. 
-                This premium suite provides the ideal setting for those important pre-ceremony moments.
-              </p>
-              <Button variant="outline" size="lg" asChild>
-                <Link to="/contact">Enquire Now</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* SECTION 6 — FINAL CTA */}
       <section className="section-spacing section-white section-divider">
