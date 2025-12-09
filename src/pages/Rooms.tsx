@@ -31,7 +31,16 @@ import room3_4 from "@/assets/room3-4.png";
 import room3_5 from "@/assets/room3-5.png";
 import room3_6 from "@/assets/room3-6.png";
 import room3_7 from "@/assets/room3-7.png";
-import room4 from "@/assets/room4.png";
+import room4_1 from "@/assets/room4-1.png";
+import room4_2 from "@/assets/room4-2.png";
+import room4_3 from "@/assets/room4-3.png";
+import room4_4 from "@/assets/room4-4.png";
+import room4_5 from "@/assets/room4-5.png";
+import room4_6 from "@/assets/room4-6.png";
+import room4_7 from "@/assets/room4-7.png";
+import room4_8 from "@/assets/room4-8.png";
+import room4_9 from "@/assets/room4-9.png";
+import room4_10 from "@/assets/room4-10.png";
 import room5 from "@/assets/room5.png";
 import room6 from "@/assets/room6.png";
 import room7 from "@/assets/room7.png";
@@ -69,7 +78,7 @@ const rooms = [
   {
     name: "Room 4",
     description: "Cozy and intimate with countryside charm throughout.",
-    images: [room4],
+    images: [room4_1, room4_2, room4_3, room4_4, room4_5, room4_6, room4_7, room4_8, room4_9, room4_10],
     price: "R1,485",
     sleeps: 2,
     beds: "1 King Bed",
