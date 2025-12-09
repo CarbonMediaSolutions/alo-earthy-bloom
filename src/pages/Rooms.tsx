@@ -63,7 +63,13 @@ import room7_4 from "@/assets/room7-4.png";
 import room7_5 from "@/assets/room7-5.png";
 import room7_6 from "@/assets/room7-6.png";
 import room7_7 from "@/assets/room7-7.png";
-import room8 from "@/assets/room8.png";
+import room8_1 from "@/assets/room8-1.png";
+import room8_2 from "@/assets/room8-2.png";
+import room8_3 from "@/assets/room8-3.png";
+import room8_4 from "@/assets/room8-4.png";
+import room8_5 from "@/assets/room8-5.png";
+import room8_6 from "@/assets/room8-6.png";
+import room8_7 from "@/assets/room8-7.png";
 import room9 from "@/assets/room9.png";
 import room10 from "@/assets/room10.png";
 import groomsRoom from "@/assets/grooms-room.png";
@@ -129,7 +135,7 @@ const rooms = [
   {
     name: "Room 8",
     description: "Comfortable space designed for rest and relaxation.",
-    images: [room8],
+    images: [room8_1, room8_2, room8_3, room8_4, room8_5, room8_6, room8_7],
     price: "R1,100",
     sleeps: 2,
     beds: "1 Queen Bed",
