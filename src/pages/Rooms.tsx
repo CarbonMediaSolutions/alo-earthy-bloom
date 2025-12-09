@@ -364,11 +364,11 @@ const Rooms = () => {
               <ul className="font-body text-muted-foreground space-y-3">
                 <li className="flex items-center gap-3 justify-center md:justify-start">
                   <span className="w-2 h-2 rounded-full bg-primary/50" />
-                  Deposit: 50% of total booking
+                  Full payment required in advance
                 </li>
                 <li className="flex items-center gap-3 justify-center md:justify-start">
                   <span className="w-2 h-2 rounded-full bg-primary/50" />
-                  Check-in: 14:00 onwards
+                  Check-in: 14:00
                 </li>
                 <li className="flex items-center gap-3 justify-center md:justify-start">
                   <span className="w-2 h-2 rounded-full bg-primary/50" />
@@ -376,7 +376,7 @@ const Rooms = () => {
                 </li>
                 <li className="flex items-center gap-3 justify-center md:justify-start">
                   <span className="w-2 h-2 rounded-full bg-primary/50" />
-                  Balance due on arrival
+                  Groom's Room check-out: 09:00
                 </li>
               </ul>
             </div>
