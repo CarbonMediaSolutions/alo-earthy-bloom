@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Facebook, Instagram } from "lucide-react";
+import { Facebook, Instagram, Download } from "lucide-react";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -21,7 +21,7 @@ export function Footer() {
           </div>
 
           {/* Navigation Links */}
-          <nav className="flex flex-wrap justify-center gap-8 md:gap-12 mb-10">
+          <nav className="flex flex-wrap justify-center gap-8 md:gap-12 mb-6">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -32,6 +32,16 @@ export function Footer() {
               </Link>
             ))}
           </nav>
+
+          {/* Download T&Cs */}
+          <a
+            href="/documents/Alo-Terms-and-Conditions.pdf"
+            download="Alo-Terms-and-Conditions.pdf"
+            className="inline-flex items-center gap-2 font-body text-sm text-primary/80 hover:text-accent transition-colors duration-300 mb-10 border border-primary/30 rounded-full px-5 py-2"
+          >
+            <Download size={16} />
+            Download Terms & Conditions (PDF)
+          </a>
 
           {/* Social Icons */}
           <div className="flex gap-4 mb-10">
