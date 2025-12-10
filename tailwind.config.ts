@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         heading: ["Playfair Display", "serif"],
-        body: ["Lato", "sans-serif"],
+        body: ['"Helvetica Neue"', "Helvetica", "Arial", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -54,6 +54,10 @@ export default {
         clay: {
           DEFAULT: "hsl(var(--clay))",
           foreground: "hsl(var(--clay-foreground))",
+        },
+        dove: {
+          DEFAULT: "hsl(var(--dove))",
+          foreground: "hsl(var(--dove-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
