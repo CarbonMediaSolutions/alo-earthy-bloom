@@ -29,15 +29,15 @@ const Contact = () => {
                   <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                     <Mail className="w-5 h-5 text-primary" />
                   </div>
-                  <div>
+                <div>
                     <span className="font-body text-sm uppercase tracking-widest text-muted-foreground block mb-1">
                       Email
                     </span>
                     <a
-                      href="mailto:alobookings5@gmail.com"
+                      href="mailto:reservations@aloaccommodation.com"
                       className="font-body text-foreground hover:text-primary transition-colors"
                     >
-                      alobookings5@gmail.com
+                      reservations@aloaccommodation.com
                     </a>
                   </div>
                 </div>
