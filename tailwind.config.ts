@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ["Playfair Display", "serif"],
+        heading: ['"Helvetica Neue"', "Helvetica", "Arial", "sans-serif"],
         body: ['"Helvetica Neue"', "Helvetica", "Arial", "sans-serif"],
       },
       colors: {
