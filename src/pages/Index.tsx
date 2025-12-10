@@ -3,7 +3,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { GalleryCarousel } from "@/components/sections/GalleryCarousel";
-import { Wifi, Car, Coffee, Leaf, MapPin, Sun } from "lucide-react";
+import { Wifi, Car, Leaf, MapPin, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // Images
@@ -28,11 +28,6 @@ const facilities = [
     icon: Car,
     title: "Free Parking",
     description: "Secure on-site parking for all guests",
-  },
-  {
-    icon: Coffee,
-    title: "Breakfast Available",
-    description: "Start your day with farm-fresh breakfast",
   },
   {
     icon: Leaf,

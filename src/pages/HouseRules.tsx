@@ -3,7 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Clock, AlertCircle, Volume2, Shield, Droplets, ClipboardCheck, Bug, Ban } from "lucide-react";
+import { Clock, AlertCircle, Shield, Droplets, ClipboardCheck, Bug, Ban } from "lucide-react";
 
 import aloeFlowers from "@/assets/aloe-flowers.jpg";
 
@@ -12,26 +12,31 @@ const rules = [
     icon: Clock,
     title: "Check-in & Check-out",
     items: [
-      "Checkout: 10h00",
-      "Groom's Room: Checkout 09h00",
-      "Check out at 10h00 for Groom's Room as per prior arrangement, providing no wedding the following day.",
+      "All rooms check-in at 14h00",
+      "Earlier access to any room requires booking the night before",
+      "Late check-in only by prior arrangement",
+      "Check-out: 10h00",
+      "Early check-out only by prior arrangement",
     ],
   },
   {
     icon: Ban,
     title: "Not Permitted",
     items: [
+      "No alcoholic beverages may be brought onto and into the property, immediate termination of stay without refund will be applicable if found.",
       "No smoking inside the rooms.",
-      "Pets are not allowed.",
-      "No children under the age of 12 should stay in rooms unsupervised.",
+      "No noise or loud music in rooms or on the porch.",
       "Only the number of guests allowed per room may sleep over.",
-    ],
-  },
-  {
-    icon: Volume2,
-    title: "Noise Policy",
-    items: [
-      "No noise or loud music in the rooms or on the porch.",
+      "No children under 12 may stay in rooms unsupervised.",
+      "Pets are not allowed.",
+      "No disturbing other guests.",
+      "No entering rooms of other parties' guests, without invitation to do so, then only when they are present.",
+      "All property of Aló Accommodation remains in their designated areas.",
+      "Parking at own risk.",
+      "No drunk driving or hooting on premises.",
+      "No illegal substances allowed.",
+      "Guests to set room alarms if they are leaving the site.",
+      "No braai or fires in or around the premises.",
     ],
   },
   {
@@ -40,6 +45,7 @@ const rules = [
     items: [
       "Each room has a separate alarm system. Beam sensors are set approximately 5cm from the windows and doors.",
       "Please keep this in mind by not peeking through the windows or doors as this will set off the alarm and cause disruption.",
+      "Room alarms to be set when guests leave their rooms.",
     ],
   },
   {
@@ -54,8 +60,9 @@ const rules = [
     icon: ClipboardCheck,
     title: "Inventory",
     items: [
-      "Please check inventory within one hour of arrival and report discrepancies to the number provided on the inventory.",
-      "Any missing items/damages/breakages following check-out will be charged to your account and will be payable within 30 days of departure.",
+      "Please check room inventory within 30 minutes of arrival and report discrepancies via the number provided.",
+      "Any missing items, damages, or breakages after check-out will be charged to the guest via card payment upon check out.",
+      "The Guest will be responsible for any fees incurred through Misconduct or damages to property.",
     ],
   },
   {
