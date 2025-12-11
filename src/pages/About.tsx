@@ -143,7 +143,7 @@ const About = () => {
               <h2 className="font-heading text-3xl md:text-4xl text-foreground mb-6">
                 About Aló
               </h2>
-              <div className="space-y-4 font-body text-muted-foreground leading-relaxed">
+              <div className="space-y-4 font-body text-foreground leading-relaxed">
                 <p>
                   "Aló" is inspired by the word for "hello" and the aloe plant – a symbol of 
                   health, resilience and quiet strength.
@@ -162,7 +162,7 @@ const About = () => {
               <h2 className="font-heading text-3xl md:text-4xl text-foreground mb-6">
                 Our Team
               </h2>
-              <div className="space-y-4 font-body text-muted-foreground leading-relaxed">
+              <div className="space-y-4 font-body text-foreground leading-relaxed">
                 <p>
                   Aló is run by a close-knit group of family and friends who love hosting and 
                   creating beautiful spaces.
