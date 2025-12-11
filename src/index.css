@@ -241,6 +241,21 @@
   .content-wide {
     @apply max-w-6xl mx-auto;
   }
+
+  /* Peach Payments Widget Centering */
+  #js-peach-container {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: auto !important;
+    max-width: 90vw !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 9999 !important;
+  }
+
+  #js-peach-container .wpwl-container {
+    position: static !important;
+  }
 }
 
 @layer utilities {
