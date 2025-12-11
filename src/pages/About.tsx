@@ -239,7 +239,7 @@ const About = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${farmAerial})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-black/50" />
         
         <div className="relative z-10 container py-24">
           <div className="text-center content-narrow">
