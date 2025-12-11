@@ -227,10 +227,10 @@
     @apply rounded-lg overflow-hidden;
   }
 
-  /* Elegant label styling - Autumn Yellow accent */
+  /* Elegant label styling - Sage Green for readability */
   .section-label {
     @apply font-body text-sm uppercase tracking-[0.2em] mb-4 block font-semibold;
-    color: hsl(var(--clay));
+    color: hsl(var(--primary));
   }
 
   /* Content container max width */
