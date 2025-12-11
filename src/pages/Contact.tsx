@@ -107,7 +107,7 @@ const Contact = () => {
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-foreground/60 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              className="w-12 h-12 rounded-full bg-dove/20 flex items-center justify-center text-dove hover:bg-dove hover:text-dove-foreground transition-all duration-300"
               aria-label="Facebook"
             >
               <Facebook size={20} />
@@ -116,7 +116,7 @@ const Contact = () => {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-foreground/60 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              className="w-12 h-12 rounded-full bg-dove/20 flex items-center justify-center text-dove hover:bg-dove hover:text-dove-foreground transition-all duration-300"
               aria-label="Instagram"
             >
               <Instagram size={20} />

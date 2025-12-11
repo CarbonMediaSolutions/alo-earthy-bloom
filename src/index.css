@@ -159,6 +159,11 @@
     background-color: hsl(var(--cream));
   }
 
+  /* Dove Blue section background */
+  .section-dove {
+    background-color: hsl(var(--dove) / 0.15);
+  }
+
   /* Large section spacing */
   .section-spacing {
     @apply py-24 md:py-32 lg:py-40;
@@ -175,7 +180,8 @@
   
   .section-divider::before {
     content: '';
-    @apply absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-primary/20;
+    @apply absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px;
+    background-color: hsl(var(--clay));
   }
 
   /* Link underline animation */
@@ -221,9 +227,10 @@
     @apply rounded-lg overflow-hidden;
   }
 
-  /* Elegant label styling */
+  /* Elegant label styling - Autumn Yellow accent */
   .section-label {
-    @apply font-body text-sm uppercase tracking-[0.2em] text-primary mb-4 block font-semibold;
+    @apply font-body text-sm uppercase tracking-[0.2em] mb-4 block font-semibold;
+    color: hsl(var(--clay));
   }
 
   /* Content container max width */

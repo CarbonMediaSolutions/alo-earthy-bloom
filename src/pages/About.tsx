@@ -56,19 +56,21 @@ const About = () => {
       {/* SECTION 2 – QUOTE */}
       <section className="section-spacing section-white">
         <div className="container text-center content-narrow">
-          <blockquote className="space-y-2">
+          <span className="text-6xl md:text-7xl text-clay/60 font-heading leading-none">"</span>
+          <blockquote className="space-y-2 -mt-6">
             <p className="font-heading text-2xl md:text-3xl lg:text-4xl text-primary italic leading-relaxed">
-              "Happiness is a choice
+              Happiness is a choice
             </p>
             <p className="font-heading text-2xl md:text-3xl lg:text-4xl text-primary italic leading-relaxed">
               Peace is a state of mind
             </p>
             <p className="font-heading text-2xl md:text-3xl lg:text-4xl text-primary italic leading-relaxed">
-              Both are free"
+              Both are free
             </p>
           </blockquote>
-          <p className="mt-8 font-body text-muted-foreground tracking-widest text-sm uppercase">
-            — Aló Philosophy
+          <div className="w-16 h-0.5 bg-clay mx-auto mt-8 mb-4" />
+          <p className="font-body text-muted-foreground tracking-widest text-sm uppercase">
+            Aló Philosophy
           </p>
         </div>
       </section>
@@ -180,7 +182,7 @@ const About = () => {
                   href="https://facebook.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                  className="w-11 h-11 rounded-full bg-dove/20 flex items-center justify-center text-dove hover:bg-dove hover:text-dove-foreground transition-all duration-300"
                   aria-label="Facebook"
                 >
                   <Facebook size={18} />
@@ -189,7 +191,7 @@ const About = () => {
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                  className="w-11 h-11 rounded-full bg-dove/20 flex items-center justify-center text-dove hover:bg-dove hover:text-dove-foreground transition-all duration-300"
                   aria-label="Instagram"
                 >
                   <Instagram size={18} />
@@ -200,8 +202,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* SECTION 6 – OUR VALUES */}
-      <section className="section-spacing section-white section-divider">
+      {/* SECTION 6 – OUR VALUES (Dove Blue background) */}
+      <section className="section-spacing section-dove section-divider">
         <div className="container">
           <div className="text-center mb-16">
             <span className="section-label">What Matters to Us</span>
@@ -214,10 +216,10 @@ const About = () => {
             {values.map((value, index) => (
               <div
                 key={value.title}
-                className="bg-secondary/30 rounded-2xl p-8 text-center card-hover"
+                className="bg-background rounded-2xl p-8 text-center card-hover border border-dove/20"
               >
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                  <value.icon size={28} className="text-primary" strokeWidth={1.5} />
+                <div className="w-16 h-16 rounded-full bg-dove/20 flex items-center justify-center mx-auto mb-6">
+                  <value.icon size={28} className="text-dove" strokeWidth={1.5} />
                 </div>
                 <h3 className="font-heading text-xl text-foreground mb-3">
                   {value.title}
