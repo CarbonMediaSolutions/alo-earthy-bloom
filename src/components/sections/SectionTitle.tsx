@@ -37,7 +37,7 @@ export function SectionTitle({
         </p>
       )}
       {align === "center" && (
-        <div className="w-12 h-0.5 bg-primary mx-auto mt-6" />
+        <div className="w-12 h-0.5 bg-clay mx-auto mt-6" />
       )}
     </div>
   );

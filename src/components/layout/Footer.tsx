@@ -49,7 +49,7 @@ export function Footer() {
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-11 h-11 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              className="w-11 h-11 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-dove hover:border-dove hover:text-dove-foreground transition-all duration-300"
               aria-label="Facebook"
             >
               <Facebook size={18} />
@@ -58,15 +58,15 @@ export function Footer() {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-11 h-11 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              className="w-11 h-11 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-dove hover:border-dove hover:text-dove-foreground transition-all duration-300"
               aria-label="Instagram"
             >
               <Instagram size={18} />
             </a>
           </div>
 
-          {/* Established */}
-          <p className="font-body text-sm text-primary/70 tracking-widest">
+          {/* Established - Dove Blue accent */}
+          <p className="font-body text-sm text-dove tracking-widest">
             Est. 2022
           </p>
         </div>

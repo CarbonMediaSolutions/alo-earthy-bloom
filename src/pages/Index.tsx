@@ -249,8 +249,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* SECTION 7 — PROPERTY FACILITIES (White) */}
-      <section className="section-spacing section-white section-divider">
+      {/* SECTION 7 — PROPERTY FACILITIES (Dove Blue) */}
+      <section className="section-spacing section-dove section-divider">
         <div className="container">
           <div className="text-center mb-20">
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
