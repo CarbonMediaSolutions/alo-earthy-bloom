@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import aloLogo from "@/assets/alo-logo.png";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -41,14 +42,11 @@ export function Navbar() {
       <div className="container flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <div className={cn(
-            "w-12 h-12 rounded-full border-2 flex items-center justify-center font-heading text-2xl transition-colors duration-300",
-            isScrolled 
-              ? "border-primary text-primary" 
-              : "border-primary-foreground text-primary-foreground"
-          )}>
-            A
-          </div>
+          <img 
+            src={aloLogo} 
+            alt="Aló Accommodation" 
+            className="h-12 w-auto transition-opacity duration-300"
+          />
         </Link>
 
         {/* Desktop Navigation */}
