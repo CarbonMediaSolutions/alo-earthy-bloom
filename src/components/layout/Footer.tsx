@@ -33,15 +33,25 @@ export function Footer() {
             ))}
           </nav>
 
-          {/* Download T&Cs */}
-          <a
-            href="/documents/Alo-Terms-and-Conditions.pdf"
-            download="Alo-Terms-and-Conditions.pdf"
-            className="inline-flex items-center gap-2 font-body text-sm text-primary/80 hover:text-accent transition-colors duration-300 mb-10 border border-primary/30 rounded-full px-5 py-2"
-          >
-            <Download size={16} />
-            Download Terms & Conditions (PDF)
-          </a>
+          {/* Download Links */}
+          <div className="flex flex-wrap justify-center gap-4 mb-10">
+            <a
+              href="/documents/Alo-Terms-and-Conditions.pdf"
+              download="Alo-Terms-and-Conditions.pdf"
+              className="inline-flex items-center gap-2 font-body text-sm text-primary/80 hover:text-accent transition-colors duration-300 border border-primary/30 rounded-full px-5 py-2"
+            >
+              <Download size={16} />
+              Download Terms & Conditions (PDF)
+            </a>
+            <a
+              href="/documents/House-Rules.pdf"
+              download="House-Rules.pdf"
+              className="inline-flex items-center gap-2 font-body text-sm text-primary/80 hover:text-accent transition-colors duration-300 border border-primary/30 rounded-full px-5 py-2"
+            >
+              <Download size={16} />
+              Download House Rules (PDF)
+            </a>
+          </div>
 
           {/* Social Icons */}
           <div className="flex gap-4 mb-10">
