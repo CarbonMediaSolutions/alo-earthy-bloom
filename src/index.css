@@ -257,25 +257,22 @@
     position: static !important;
   }
 
-  /* ResNova Payment Modal Customizations */
-  /* Center the button container */
-  .modal-heading + .modal-content + div.flex {
-    justify-content: center !important;
-  }
+}
 
-  /* Hide original button text and replace with "Pay Now" */
-  .button.primary-button span {
-    visibility: hidden;
-    position: relative;
-  }
+/* ResNova Payment Modal Customizations - Outside @layer for higher specificity */
+/* Center the button container */
+div.flex.justify-end.gap-x-4 {
+  justify-content: center !important;
+}
 
-  .button.primary-button span::after {
-    content: "Pay Now";
-    visibility: visible;
-    position: absolute;
-    left: 0;
-    right: 0;
-  }
+/* Hide original button text and replace with "Pay Now" */
+.button.primary-button span {
+  font-size: 0 !important;
+}
+
+.button.primary-button span::after {
+  content: "Pay Now" !important;
+  font-size: 16px !important;
 }
 
 @layer utilities {
