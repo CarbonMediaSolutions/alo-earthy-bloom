@@ -268,9 +268,25 @@ div.flex.justify-end.gap-x-4 {
 /* Hide original button text and replace with "Pay Now" */
 .button.primary-button span {
   font-size: 0 !important;
+  color: transparent !important;
+  position: relative !important;
 }
 
 .button.primary-button span::after {
+  content: "Pay Now" !important;
+  font-size: 16px !important;
+  color: white !important;
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+/* Also target with more specific class combinations */
+button.button.primary-button span {
+  font-size: 0 !important;
+}
+
+button.button.primary-button span::after {
   content: "Pay Now" !important;
   font-size: 16px !important;
 }
