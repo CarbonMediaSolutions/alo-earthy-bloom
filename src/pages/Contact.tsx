@@ -130,7 +130,7 @@ const Contact = () => {
         <div className="container">
           <div className="rounded-lg overflow-hidden shadow-card">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.5!2d18.6889!3d-33.7825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc4f4b4b4b4b4b%3A0x1234567890abcdef!2sAl%C3%B3%20Accommodation!5e0!3m2!1sen!2sza!4v1702656000000!5m2!1sen!2sza"
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Aló+Accommodation,Durbanville,Cape+Town,South+Africa&zoom=14"
               width="100%"
               height="450"
               style={{ border: 0 }}
