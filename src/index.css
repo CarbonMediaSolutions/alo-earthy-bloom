@@ -256,6 +256,26 @@
   #js-peach-container .wpwl-container {
     position: static !important;
   }
+
+  /* ResNova Payment Modal Customizations */
+  /* Center the button container */
+  .modal-heading + .modal-content + div.flex {
+    justify-content: center !important;
+  }
+
+  /* Hide original button text and replace with "Pay Now" */
+  .button.primary-button span {
+    visibility: hidden;
+    position: relative;
+  }
+
+  .button.primary-button span::after {
+    content: "Pay Now";
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
 }
 
 @layer utilities {
