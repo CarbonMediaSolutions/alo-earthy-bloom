@@ -3,7 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Clock, AlertCircle, Shield, Droplets, ClipboardCheck, Bug, Ban } from "lucide-react";
+import { Clock, AlertCircle, Shield, ClipboardCheck, Bug, Ban } from "lucide-react";
 
 import aloeFlowers from "@/assets/aloe-flowers.jpg";
 
@@ -12,71 +12,68 @@ const rules = [
     icon: Clock,
     title: "Check-in & Check-out",
     items: [
-      "All rooms check-in at 14h00",
-      "Earlier access to any room requires booking the night before",
-      "Late check-in only by prior arrangement",
-      "Check-out: 10h00",
-      "Early check-out only by prior arrangement",
-    ],
-  },
-  {
-    icon: Ban,
-    title: "Not Permitted",
-    items: [
-      "No alcoholic beverages may be brought onto and into the property, immediate termination of stay without refund will be applicable if found.",
-      "No smoking inside the rooms.",
-      "No noise or loud music in rooms or on the porch.",
-      "Only the number of guests allowed per room may sleep over.",
-      "No children under 12 may stay in rooms unsupervised.",
-      "Pets are not allowed.",
-      "No disturbing other guests.",
-      "No entering rooms of other parties' guests, without invitation to do so, then only when they are present.",
-      "All property of Aló Accommodation remains in their designated areas.",
-      "Parking at own risk.",
-      "No drunk driving or hooting on premises.",
-      "No illegal substances allowed.",
-      "Guests to set room alarms if they are leaving the site.",
-      "No braai or fires in or around the premises.",
+      "Standard check-in for all rooms is 14h00.",
+      "Groom's Room check-in is from 11h00.",
+      "Earlier access to any room is only guaranteed if the night before is booked and paid for.",
+      "Late check-in is permitted only by prior arrangement and agreement.",
+      "Groom's Room check-out is strictly 09h00.",
+      "All other rooms have a strict check-out time of 10h00.",
+      "Early check-out before 07h00 is permitted only by prior arrangement and agreement.",
     ],
   },
   {
     icon: Shield,
     title: "Security",
     items: [
-      "Each room has a separate alarm system. Beam sensors are set approximately 5cm from the windows and doors.",
-      "Please keep this in mind by not peeking through the windows or doors as this will set off the alarm and cause disruption.",
-      "Room alarms to be set when guests leave their rooms.",
-    ],
-  },
-  {
-    icon: Droplets,
-    title: "Water",
-    items: [
-      "Aló make use of borehole water. Use water at own risk.",
-      "Bottled water are provided in the rooms.",
+      "Each room is fitted with a separate alarm system.",
+      "Beam sensors are positioned approximately 5cm from windows and doors.",
+      "Guests are requested not to lean, peer through, or interfere with windows or doors, as this may trigger the alarm and cause disruption.",
+      "Guests must activate room alarms when leaving their rooms or the premises.",
+      "Any unnecessary or avoidable alarm activations may be charged to the guest.",
     ],
   },
   {
     icon: ClipboardCheck,
     title: "Inventory",
     items: [
-      "Please check room inventory within 30 minutes of arrival and report discrepancies via the number provided.",
-      "Any missing items, damages, or breakages after check-out will be charged to the guest via card payment upon check out.",
-      "The Guest will be responsible for any fees incurred through Misconduct or damages to property.",
+      "Guests are required to check room inventory within 30 minutes of arrival and report any discrepancies using the contact number provided.",
+      "Any missing items, damages, or breakages identified during or after the stay will be charged to the guest's card upon check-out.",
+      "Guests will be held liable for any costs arising from misconduct, negligence, or damage to property.",
     ],
   },
   {
     icon: Bug,
     title: "Mosquito Control",
     items: [
-      "Kindly unplug the Raid Liquid Mosquito killer when not in use.",
+      "Kindly unplug the Raid Liquid Mosquito Killer when not in use to prevent damage or safety risks.",
+    ],
+  },
+  {
+    icon: Ban,
+    title: "Not Permitted",
+    items: [
+      "No alcoholic beverages may be brought onto or consumed on the property. Any breach of this rule will result in immediate termination of the stay without refund.",
+      "Smoking is strictly prohibited inside all rooms.",
+      "No loud music, excessive noise, or disruptive behaviour in rooms, on porches, or anywhere on the premises.",
+      "Only the number of guests booked and paid for per room may stay overnight.",
+      "Children under the age of 16 may not stay in rooms without adult supervision.",
+      "Pets are not permitted on the premises.",
+      "Guests may not disturb or interfere with other guests.",
+      "Entering another guest's room is strictly prohibited unless explicitly invited and only when the host guest is present.",
+      "All property belonging to Aló Accommodation must remain in its designated areas at all times.",
+      "Parking is at the guest's own risk.",
+      "No drunk driving, hooting, or reckless driving on the premises.",
+      "No illegal substances are permitted anywhere on the property.",
+      "Guests must activate room alarms when leaving the site.",
+      "No braais, fires, or open flames are permitted in or around the premises.",
+      "No cooking of any kind is permitted in rooms, including the use of personal appliances such as air fryers, hot plates, gas stoves, or similar equipment.",
     ],
   },
   {
     icon: AlertCircle,
     title: "General",
     items: [
-      "Aló Accommodation reserves the right to remove any person from the premises whose reckless behavior endangers others.",
+      "Aló Accommodation reserves the right to remove any person from the premises without refund if their behaviour is reckless, unlawful, disruptive, or endangers the safety, comfort, or property of others.",
     ],
   },
 ];
