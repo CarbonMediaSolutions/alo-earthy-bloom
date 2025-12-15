@@ -130,14 +130,14 @@ const Contact = () => {
         <div className="container">
           <div className="rounded-lg overflow-hidden shadow-card">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.1234567890!2d18.6789!3d-33.7890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDQ3JzIwLjQiUyAxOMKwNDAnNDQuMCJF!5e0!3m2!1sen!2sza!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.5!2d18.7166!3d-33.7825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc53b22f099741%3A0x8ecf5c8e8a5f1234!2sK11%2C%20Lichtenburg%20Farm%2C%20R302%20Klipheuwel%20Rd%2C%20Durbanville%2C%20Cape%20Town%2C%207550!5e0!3m2!1sen!2sza!4v1702656000000!5m2!1sen!2sza"
               width="100%"
               height="450"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Aló Accommodation Location"
+              title="Aló Accommodation - Lichtenburg Farm Location"
             />
           </div>
         </div>
