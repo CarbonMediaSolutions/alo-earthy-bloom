@@ -138,19 +138,7 @@ const HouseRules = () => {
           <p className="font-body text-muted-foreground mb-2">
             Thank you for your co-operation.
           </p>
-          <p className="font-body text-muted-foreground mb-4">
-            Enjoy your stay
-          </p>
-          <p className="font-heading text-xl text-primary">The Aló-Team</p>
-
-          <div className="mt-8">
-            <p className="font-body text-sm text-muted-foreground uppercase tracking-widest mb-4">
-              Take a look at our info page
-            </p>
-            <Button variant="outline" asChild>
-              <Link to="/about">About Aló</Link>
-            </Button>
-          </div>
+          <p className="font-heading text-xl text-primary">Enjoy your stay</p>
         </div>
       </section>
 

@@ -197,28 +197,27 @@
     @apply scale-x-100 origin-bottom-left;
   }
 
-  /* Card hover effect - luxury lift */
+  /* Card hover effect - subtle shadow only, no movement */
   .card-hover {
-    @apply transition-all duration-500 ease-out;
+    @apply transition-shadow duration-500 ease-out;
     box-shadow: var(--shadow-card);
   }
   
   .card-hover:hover {
     box-shadow: var(--shadow-hover);
-    @apply -translate-y-3;
   }
 
-  /* Image zoom on hover */
+  /* Image zoom on hover - DISABLED for static images */
   .image-zoom {
     @apply overflow-hidden;
   }
   
   .image-zoom img {
-    @apply transition-transform duration-700 ease-out;
+    @apply transition-none;
   }
   
   .image-zoom:hover img {
-    @apply scale-110;
+    /* Hover effect disabled */
   }
 
   /* Gallery image with shadow */

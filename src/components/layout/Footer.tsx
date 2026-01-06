@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Download } from "lucide-react";
+import aloLogo from "@/assets/alo-logo.png";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -16,8 +17,8 @@ export function Footer() {
       <div className="container">
         <div className="flex flex-col items-center">
           {/* Centered Circle Logo */}
-          <div className="w-24 h-24 rounded-full border-2 border-primary flex items-center justify-center mb-10">
-            <span className="font-heading text-4xl text-primary font-medium">Aló</span>
+          <div className="w-24 h-24 rounded-full border-2 border-primary flex items-center justify-center mb-10 overflow-hidden p-2">
+            <img src={aloLogo} alt="Aló" className="h-full w-auto object-contain" />
           </div>
 
           {/* Navigation Links */}
