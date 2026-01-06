@@ -81,7 +81,7 @@ const About = () => {
           <div className="text-center content-narrow">
             <span className="section-label">Our Story</span>
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-foreground mb-10 leading-tight">
-              How Aló Came to Life
+              How Aló Accomodation came to life
             </h2>
             <div className="space-y-6 font-body text-muted-foreground text-lg leading-relaxed">
               <p>
@@ -90,12 +90,12 @@ const About = () => {
               </p>
               <p>
                 We wanted to create a place where guests could slow down, breathe deeply and 
-                feel at home, surrounded by open fields and quiet mornings.
+                feel at home, surrounded by open fields, big skies and quiet mornings.
               </p>
               <p>
-                Today, Aló is a calm, welcoming farm stay in Durbanville's countryside, offering 
+                Today, Aló Accommodation is a calm, welcoming farm stay in Durbanville's countryside, offering 
                 carefully prepared rooms, thoughtful touches and the kind of hospitality that 
-                makes you want to return.
+                welcomes you every time.
               </p>
             </div>
           </div>
@@ -141,18 +141,16 @@ const About = () => {
             {/* About Aló */}
             <div className="text-center lg:text-left">
               <h2 className="font-heading text-3xl md:text-4xl text-foreground mb-6">
-                About Aló
+                About Aló Accomodation
               </h2>
               <div className="space-y-4 font-body text-foreground leading-relaxed">
                 <p>
-                  "Aló" is inspired by the word for "hello" and the aloe plant – a symbol of 
-                  health, resilience and quiet strength.
+                  "Aló" is inspired by the Spanish word for "hello" and we take that warm greeting as an inspiration for 
+                  everything we do.
                 </p>
                 <p>
-                  At Aló Accommodation, we combine the simplicity of farm life with the comfort 
-                  of modern amenities. Our rooms are thoughtfully styled, our surroundings are 
-                  intentionally calm, and our wish is that every guest leaves feeling rested 
-                  and refreshed.
+                  We have created a space where we welcome our guests to relax, rest and refresh 
+                  in the tranquility of nature.
                 </p>
               </div>
             </div>
@@ -274,7 +272,7 @@ const About = () => {
         <div className="container">
           <div className="text-center content-narrow">
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 text-balance">
-              Come and Experience Aló for Yourself
+              Come and experience Aló Accomodation for yourself
             </h2>
             <p className="font-body text-muted-foreground text-lg md:text-xl leading-relaxed mb-10">
               We'd be honoured to host you at Aló Accommodation. Choose your room, plan your 

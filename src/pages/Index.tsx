@@ -12,6 +12,7 @@ import interiorDetail from "@/assets/interior-detail.png";
 import roomPreview from "@/assets/room-preview.png";
 import groomsRoom from "@/assets/grooms-room.png";
 import ctaBackground from "@/assets/cta-background.png";
+import aloLogo from "@/assets/alo-logo.png";
 import gallery1 from "@/assets/gallery-1.png";
 import gallery2 from "@/assets/gallery-2.png";
 import gallery3 from "@/assets/gallery-3.png";
@@ -154,11 +155,13 @@ const Index = () => {
 
         {/* Content with text shadow */}
         <div className="relative z-10 container text-center px-4">
-          <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl text-primary-foreground mb-6 animate-fade-up opacity-0 hero-text-shadow">
-            Aló Accommodation
-          </h1>
+          <img 
+            src={aloLogo} 
+            alt="Aló Accommodation" 
+            className="h-32 md:h-40 lg:h-48 w-auto mx-auto mb-6 animate-fade-up opacity-0"
+          />
           <p className="font-body text-primary-foreground text-xl md:text-2xl mb-12 animate-fade-up opacity-0 delay-200 tracking-wide hero-text-shadow">
-            Accommodation nestled in the farmlands of Durbanville
+            Nestled in the farmlands of Durbanville
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up opacity-0 delay-300">
@@ -176,13 +179,14 @@ const Index = () => {
       <section className="section-spacing section-white section-divider">
         <div className="container">
           <div className="text-center content-narrow">
-            <span className="section-label">Welcome to Aló</span>
+            <span className="section-label">Welcome to Aló Accommodation</span>
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-foreground mb-8 leading-tight text-balance">
-              Accommodation Nestled in the Farmlands of Durbanville
+              Nestled in the Farmlands of Durbanville
             </h2>
             <p className="font-body text-muted-foreground text-lg md:text-xl leading-relaxed">
-              Aló gives you the ideal location with quick access to the farm. Experience peace, 
-              tranquility, and the beauty of the Western Cape countryside.
+              Aló Accommodation offers a tranquil stay, in the heart of the beautiful Western Cape countryside. 
+              Ideally positioned on the Lichtenburg Farm, it is located close to wedding venues and nearby farms, 
+              allowing easy access to explore the farm and nearby attractions.
             </p>
           </div>
         </div>
@@ -191,8 +195,8 @@ const Index = () => {
       {/* SECTION 3 — ABOUT SNIPPET (Beige) */}
       <TwoColumnSection
         label="About Us"
-        title="Read about Aló, our team and Lichtenburg Farm"
-        description="Aló is the Irish word for 'Aloe' as well as the Spanish word for 'hello'. As you drive into Lichtenburg farm you'll immediately notice the rows of Aloe's welcoming you. The Aloe plant is widely known for its beauty and it represents good fortune, good health and ever-lasting friendship."
+        title="Read about Aló Accommodation, our team and Lichtenburg Farm"
+        description="Aló is the Spanish word for 'hello' and this warm greeting is the inspiration which guides our friendly and comfortable hospitality offering. Here we welcome you to our farm stay, surrounded by nature and the rolling Durbanville hills."
         image={interiorDetail}
         imageAlt="Elegant interior at Aló Accommodation"
         ctaText="Find Out More"
@@ -203,8 +207,8 @@ const Index = () => {
       {/* SECTION 4 — OUR ROOMS PREVIEW (White) */}
       <TwoColumnSection
         label="Our Rooms"
-        title="At Aló we have 11 rooms for you to pick from"
-        description="Each of our rooms has been thoughtfully designed to provide comfort and tranquility. From the elegant furnishings to the stunning views, every detail has been considered to ensure your stay is truly memorable."
+        title="We have 11 rooms to choose from, allowing something for everyone"
+        description="Each of our rooms has been thoughtfully designed to create a comfortable and welcoming stay. Relax outside and enjoy the view of the rolling hills and open skies, or head down for a good night's sleep in our comfortable beds."
         image={roomPreview}
         imageAlt="Comfortable room at Aló"
         ctaText="View All Rooms"
@@ -217,7 +221,7 @@ const Index = () => {
       <TwoColumnSection
         label="Take a Look At"
         title="Our Groom's Room"
-        description="Perfect for wedding parties, our Groom's Room offers a special space for the groom and his party to prepare for the big day. Featuring masculine decor, comfortable seating, and all the amenities needed for a memorable getting-ready experience."
+        description="Perfect for wedding parties, our Groom's Room offers a special space for the groom and his party to prepare for the big day. A double sized suite, it features masculine decor, comfortable seating, and all the amenities needed for a memorable experience getting ready."
         image={groomsRoom}
         imageAlt="Groom's Room at Aló Accommodation"
         ctaText="Find Out More"

@@ -95,7 +95,7 @@ import groomsRoom from "@/assets/grooms-room.png";
 const rooms = [
   {
     name: "Room 1",
-    description: "Sleeps 4 with 1 double bed and 2 single beds. Includes table & seating inside, separate alarm system, kitchenette with complimentary coffee, tea & sugar, private bathroom with shower & towels, and outside seating.",
+    description: "Sleeps four with one double bed and two single beds. Includes table and seating inside, kitchenette with complimentary coffee, tea and sugar, private bathroom with shower and towels, and outside seating.",
     images: [room1_1, room1_2, room1_3, room1_4, room1_5, room1_6],
     price: "R1,650",
     sleeps: 4,
@@ -103,7 +103,7 @@ const rooms = [
   },
   {
     name: "Room 2",
-    description: "Sleeps 2 with 1 double bed. Includes table & seating inside, separate alarm system, kitchenette with complimentary coffee, tea & sugar, private bathroom with shower & towels, and outside seating.",
+    description: "Sleeps two with one double bed. Includes table and seating inside, kitchenette with complimentary coffee, tea and sugar, private bathroom with shower and towels, and outside seating.",
     images: [room2_1, room2_2, room2_3, room2_4, room2_5, room2_6, room2_7, room2_8, room2_9, room2_10],
     price: "R1,100",
     sleeps: 2,
@@ -111,7 +111,7 @@ const rooms = [
   },
   {
     name: "Room 3",
-    description: "Sleeps 2 with 1 double bed. Includes table & seating inside, separate alarm system, kitchenette with complimentary coffee, tea & sugar, private bathroom with shower & towels, and outside seating.",
+    description: "Sleeps two with one double bed. Includes table and seating inside, kitchenette with complimentary coffee, tea and sugar, private bathroom with shower and towels, and outside seating.",
     images: [room3_1, room3_2, room3_3, room3_4, room3_5, room3_6, room3_7],
     price: "R1,100",
     sleeps: 2,
@@ -119,7 +119,7 @@ const rooms = [
   },
   {
     name: "Room 4",
-    description: "Sleeps 3 with 1 double bed and 1 single bed. Includes table & seating inside, separate alarm system, kitchenette with complimentary coffee, tea & sugar, private bathroom with shower & towels, and outside seating.",
+    description: "Sleeps three with one double bed and one single bed. Includes table and seating inside, kitchenette with complimentary coffee, tea and sugar, private bathroom with shower and towels, and outside seating.",
     images: [room4_1, room4_2, room4_3, room4_4, room4_5, room4_6, room4_7, room4_8, room4_9, room4_10],
     price: "R1,485",
     sleeps: 3,
@@ -127,7 +127,7 @@ const rooms = [
   },
   {
     name: "Groom's Room",
-    description: "Double-sized suite perfect for wedding parties. Fully equipped kitchenette, clothing rack, iron & ironing board, and space for 6 groomsmen to prepare.",
+    description: "Double-sized suite perfect for wedding parties. Fully equipped kitchenette, clothing rack, iron and ironing board, and space for six groomsmen to prepare.",
     images: [room5_1, room5_2, room5_3, room5_4, room5_5, room5_6, room5_7],
     price: "R1,500",
     sleeps: 2,
@@ -135,7 +135,7 @@ const rooms = [
   },
   {
     name: "Room 6",
-    description: "Sleeps 2 with 1 double bed. Includes table & seating inside, separate alarm system, kitchenette with complimentary coffee, tea & sugar, private bathroom with shower & towels, and outside seating.",
+    description: "Sleeps two with one double bed. Includes table and seating inside, kitchenette with complimentary coffee, tea and sugar, private bathroom with shower and towels, and outside seating.",
     images: [room6_1, room6_2, room6_3, room6_4, room6_5, room6_6, room6_7, room6_8],
     price: "R1,100",
     sleeps: 2,
@@ -143,7 +143,7 @@ const rooms = [
   },
   {
     name: "Room 7",
-    description: "Sleeps 2 with 1 double bed. Includes table & seating inside, separate alarm system, kitchenette with complimentary coffee, tea & sugar, private bathroom with shower & towels, and outside seating.",
+    description: "Sleeps two with one double bed. Includes table and seating inside, kitchenette with complimentary coffee, tea and sugar, private bathroom with shower and towels, and outside seating.",
     images: [room7_1, room7_2, room7_3, room7_4, room7_5, room7_6, room7_7],
     price: "R1,100",
     sleeps: 2,
@@ -151,7 +151,7 @@ const rooms = [
   },
   {
     name: "Room 8",
-    description: "Sleeps 2 with 1 double bed. Includes table & seating inside, separate alarm system, kitchenette with complimentary coffee, tea & sugar, private bathroom with shower & towels, and outside seating.",
+    description: "Sleeps two with one double bed. Includes table and seating inside, kitchenette with complimentary coffee, tea and sugar, private bathroom with shower and towels, and outside seating.",
     images: [room8_1, room8_2, room8_3, room8_4, room8_5, room8_6, room8_7],
     price: "R1,100",
     sleeps: 2,
@@ -159,7 +159,7 @@ const rooms = [
   },
   {
     name: "Room 9",
-    description: "Sleeps 2 with 1 double bed. Includes table & seating inside, separate alarm system, kitchenette with complimentary coffee, tea & sugar, private bathroom with shower & towels, and outside seating.",
+    description: "Sleeps two with one double bed. Includes table and seating inside, kitchenette with complimentary coffee, tea and sugar, private bathroom with shower and towels, and outside seating.",
     images: [room9_1, room9_2, room9_3, room9_4, room9_5, room9_6],
     price: "R1,100",
     sleeps: 2,
@@ -167,7 +167,7 @@ const rooms = [
   },
   {
     name: "Room 10",
-    description: "Sleeps 2 with 1 double bed. Includes table & seating inside, separate alarm system, kitchenette with complimentary coffee, tea & sugar, private bathroom with shower & towels, and outside seating.",
+    description: "Sleeps two with one double bed. Includes table and seating inside, kitchenette with complimentary coffee, tea and sugar, private bathroom with shower and towels, and outside seating.",
     images: [room10_1, room10_2, room10_3, room10_4, room10_5],
     price: "R1,100",
     sleeps: 2,
@@ -175,7 +175,7 @@ const rooms = [
   },
   {
     name: "Room 11",
-    description: "Sleeps 2 with 1 double bed. Includes table & seating inside, separate alarm system, kitchenette with complimentary coffee, tea & sugar, private bathroom with shower & towels, and outside seating.",
+    description: "Sleeps two with one double bed. Includes table and seating inside, kitchenette with complimentary coffee, tea and sugar, private bathroom with shower and towels, and outside seating.",
     images: [room11_1, room11_2, room11_3, room11_4, room11_5, room11_6, room11_7, room11_8],
     price: "R1,100",
     sleeps: 2,
@@ -372,7 +372,7 @@ const Rooms = () => {
                 </li>
                 <li className="flex items-center gap-3 justify-center md:justify-start">
                   <span className="w-2 h-2 rounded-full bg-primary/50" />
-                  Late check-in only by prior arrangement
+                  Early or late check-in only by prior arrangement
                 </li>
                 <li className="flex items-center gap-3 justify-center md:justify-start">
                   <span className="w-2 h-2 rounded-full bg-primary/50" />
@@ -380,7 +380,7 @@ const Rooms = () => {
                 </li>
                 <li className="flex items-center gap-3 justify-center md:justify-start">
                   <span className="w-2 h-2 rounded-full bg-primary/50" />
-                  Early check-out only by prior arrangement
+                  Early or late check-out only by prior arrangement
                 </li>
               </ul>
             </div>
