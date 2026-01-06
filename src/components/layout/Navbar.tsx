@@ -38,7 +38,7 @@ export function Navbar() {
           : "bg-transparent py-5"
       )}
     >
-      <div className="container flex items-center justify-between">
+      <div className="container relative flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <img 
@@ -48,8 +48,8 @@ export function Navbar() {
           />
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        {/* Desktop Navigation - Absolutely centered */}
+        <nav className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
           {navLinks.map((link) => (
             <Link
               key={link.path}
