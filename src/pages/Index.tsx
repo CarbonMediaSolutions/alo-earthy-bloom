@@ -155,11 +155,13 @@ const Index = () => {
 
         {/* Content with text shadow */}
         <div className="relative z-10 container text-center px-4">
-          <img 
-            src={aloLogo} 
-            alt="Aló Accommodation" 
-            className="h-32 md:h-40 lg:h-48 w-auto mx-auto mb-6 animate-fade-up opacity-0"
-          />
+          <div className="inline-block bg-background/20 backdrop-blur-sm rounded-lg px-8 py-6 mb-6 animate-fade-up opacity-0">
+            <img 
+              src={aloLogo} 
+              alt="Aló Accommodation" 
+              className="h-24 md:h-32 lg:h-36 w-auto mx-auto"
+            />
+          </div>
           <p className="font-body text-primary-foreground text-xl md:text-2xl mb-12 animate-fade-up opacity-0 delay-200 tracking-wide hero-text-shadow">
             Nestled in the farmlands of Durbanville
           </p>
