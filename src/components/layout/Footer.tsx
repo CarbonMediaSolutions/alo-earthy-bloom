@@ -77,8 +77,21 @@ export function Footer() {
           </div>
 
           {/* Established - Dove Blue accent */}
-          <p className="font-body text-sm text-dove tracking-widest">
+          <p className="font-body text-sm text-dove tracking-widest mb-6">
             Est. 2022
+          </p>
+
+          {/* Credit */}
+          <p className="font-body text-xs text-primary/60">
+            Website made with love by{" "}
+            <a
+              href="https://carbonmediasolutions.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-accent transition-colors duration-300 underline underline-offset-2"
+            >
+              Carbon Media Solutions
+            </a>
           </p>
         </div>
       </div>
