@@ -7,10 +7,9 @@ import { cn } from "@/lib/utils";
 
 import aloeFlowers from "@/assets/aloe-flowers.jpg";
 import farmAerial from "@/assets/farm-aerial.jpg";
-import heroMain from "@/assets/hero-main.jpg";
+import gallery1 from "@/assets/gallery-1.png";
 import interiorDetail from "@/assets/interior-detail.png";
 import roomDetail1 from "@/assets/room-detail-1.png";
-import gallery4 from "@/assets/gallery-4.png";
 
 const values = [
   {
@@ -109,7 +108,7 @@ const About = () => {
             {/* Large main image */}
             <div className="md:row-span-2 rounded-2xl overflow-hidden shadow-hover">
               <img
-                src={heroMain}
+                src={gallery1}
                 alt="Aló Accommodation cottages"
                 className="w-full h-full object-cover min-h-[300px] md:min-h-full"
               />
