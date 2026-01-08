@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { Wifi, Car, Users, Bed, Coffee, Bath, Refrigerator, ChevronLeft, ChevronRight } from "lucide-react";
+import { Wifi, Car, Users, Bed, Coffee, Bath, Refrigerator, ChevronLeft, ChevronRight, ArrowUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 
@@ -297,7 +297,7 @@ function RoomCard({ name, description, images, price, sleeps, beds }: RoomCardPr
         </p>
         
         <Button variant="outline" size="default" className="w-full" asChild>
-          <a href="#booking">Book Now</a>
+          <a href="#booking">Check Availability</a>
         </Button>
       </div>
     </div>
@@ -439,17 +439,33 @@ const Rooms = () => {
         </div>
       </section>
 
+      {/* Notice Banner - Mobile helper */}
+      <div className="bg-primary/10 border-y border-primary/20 py-4 md:hidden">
+        <div className="container">
+          <a 
+            href="#booking" 
+            className="flex items-center justify-center gap-2 text-primary font-body text-sm font-medium"
+          >
+            <ArrowUp size={16} />
+            <span>Use the booking calendar above to check availability</span>
+          </a>
+        </div>
+      </div>
+
       {/* SECTION 3 — INTRO */}
       <section className="section-spacing section-white section-divider">
         <div className="container">
           <div className="text-center content-narrow">
-            <span className="section-label">Accommodation</span>
+            <span className="section-label">Browse Our Rooms</span>
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-foreground mb-8 leading-tight text-balance">
-              Choose Your Perfect Room
+              Explore Our Accommodation
             </h2>
-            <p className="font-body text-muted-foreground text-lg md:text-xl leading-relaxed">
+            <p className="font-body text-muted-foreground text-lg md:text-xl leading-relaxed mb-4">
               All rooms include en-suite bathrooms, comfortable bedding, and serene farm surroundings. 
               Each space has been carefully prepared to ensure a peaceful and memorable visit.
+            </p>
+            <p className="font-body text-primary text-base font-medium">
+              To book, please use the booking calendar above or contact us directly.
             </p>
           </div>
         </div>
