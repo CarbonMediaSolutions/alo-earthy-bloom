@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { Wifi, Car, Users, Bed, Coffee, Bath, Refrigerator, ChevronLeft, ChevronRight, ArrowUp } from "lucide-react";
+import { Wifi, Car, Users, Bed, Coffee, Bath, Refrigerator, ChevronLeft, ChevronRight, ArrowUp, Mail, Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 
@@ -317,14 +317,40 @@ declare global {
 }
 
 const Rooms = () => {
-  // Ensure the ResNova widget renders properly
+  // ResNova widget diagnostics for debugging international booking issues
   useEffect(() => {
-    // Trigger any custom element upgrade if needed
+    console.log('[ResNova Diagnostics] Page loaded, checking widget status...');
+    
+    // Check if ResNova script is loaded
+    const scripts = Array.from(document.querySelectorAll('script'));
+    const resnovaScript = scripts.find(s => s.src?.includes('resnova.resrequest.com'));
+    console.log('[ResNova Diagnostics] Widget script detected:', !!resnovaScript);
+    
+    // Check if custom element is defined
     if (typeof window !== 'undefined' && window.customElements) {
-      window.customElements.whenDefined('rr-resnova').catch(() => {
-        // Widget not defined yet, script will handle it
-      });
+      window.customElements.whenDefined('rr-resnova')
+        .then(() => {
+          console.log('[ResNova Diagnostics] Custom element <rr-resnova> defined successfully');
+        })
+        .catch(() => {
+          console.warn('[ResNova Diagnostics] Custom element <rr-resnova> not defined');
+        });
     }
+    
+    // Check widget render status after 5 seconds
+    const renderCheck = setTimeout(() => {
+      const widget = document.querySelector('rr-resnova');
+      const hasContent = widget && widget.shadowRoot?.childElementCount > 0;
+      console.log('[ResNova Diagnostics] Widget render check (5s):', {
+        widgetFound: !!widget,
+        hasContent: hasContent,
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent,
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+      });
+    }, 5000);
+    
+    return () => clearTimeout(renderCheck);
   }, []);
 
   return (
@@ -433,6 +459,30 @@ const Rooms = () => {
                   widget-id="a05ce6fd-8241-4d18-9979-555e57b0ebcc" 
                   api-url="https://resnova.resrequest.com/api/"
                 />
+              </div>
+            </div>
+            
+            {/* Booking Fallback Contact Block */}
+            <div className="max-w-4xl mx-auto mt-6 bg-secondary/50 rounded-xl p-6 border border-border">
+              <h4 className="font-heading text-lg text-foreground mb-2">Having trouble booking?</h4>
+              <p className="font-body text-muted-foreground text-sm mb-4">
+                If the online booking isn't loading or you're experiencing issues, please contact us directly:
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href="mailto:reservations@aloaccommodation.com" 
+                  className="inline-flex items-center justify-center gap-2 text-primary hover:text-accent transition-colors font-body text-sm"
+                >
+                  <Mail size={16} strokeWidth={1.5} />
+                  <span>reservations@aloaccommodation.com</span>
+                </a>
+                <a 
+                  href="tel:+27845063119" 
+                  className="inline-flex items-center justify-center gap-2 text-primary hover:text-accent transition-colors font-body text-sm"
+                >
+                  <Phone size={16} strokeWidth={1.5} />
+                  <span>(+27) 84 506 3119</span>
+                </a>
               </div>
             </div>
           </div>
