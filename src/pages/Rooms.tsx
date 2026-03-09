@@ -356,6 +356,10 @@ const Rooms = () => {
 
   return (
     <main className="min-h-screen">
+      <Helmet>
+        <title>Our Rooms | Aló Accommodation</title>
+        <meta name="description" content="Explore 11 beautifully appointed rooms at Aló Accommodation. Each room offers comfort, scenic views, and a peaceful farm setting in Durbanville." />
+      </Helmet>
       <Navbar />
 
       {/* SECTION 1 — HERO */}

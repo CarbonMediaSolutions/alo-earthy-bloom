@@ -33,6 +33,10 @@ const values = [
 const About = () => {
   return (
     <main className="min-h-screen">
+      <Helmet>
+        <title>About Us | Aló Accommodation</title>
+        <meta name="description" content="Learn about Aló Accommodation, our team, and Lichtenburg Farm in Durbanville. A warm, welcoming farm stay in the Western Cape." />
+      </Helmet>
       <Navbar />
 
       {/* SECTION 1 – HERO */}
