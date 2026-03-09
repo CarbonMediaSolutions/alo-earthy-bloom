@@ -1,83 +1,40 @@
 
 
-## Add Booking Fallback Contact + Diagnostics
+## Fix SEO: Unique Meta Tags Per Page
 
-### Problem Summary
-International guests (USA, Germany, Canada) experience infinite loading when trying to complete bookings through the ResNova widget. The issue occurs at the "Add booking" or checkout stage and is a ResNova/ResRequest backend issue that cannot be fixed on the website.
+### Problem
+All pages share the same `<title>` and `<meta description>` from `index.html`, so Google shows identical descriptions for Rooms, About, and Contact sitelinks. Additionally, the site appears under the `lovable.app` domain — connecting a custom domain resolves that.
 
-### What We Will Implement
+### Solution
+Install `react-helmet-async` to set unique `<title>` and `<meta name="description">` per page.
 
-#### 1. Add "Having Trouble Booking?" Contact Block
-Add a visible help section below the booking widget with contact options for guests who encounter issues.
+### Changes
 
-**File:** `src/pages/Rooms.tsx`
+**1. Install `react-helmet-async`**
 
-**Changes:**
-- Add a styled box below the ResNova widget with:
-  - Heading: "Having trouble booking?"
-  - Subtext: "If the online booking isn't loading or you're having issues, please contact us directly:"
-  - Email link: reservations@aloaccommodation.com (click-to-email)
-  - Phone link: (+27) 84 506 3119 (click-to-call)
+**2. Wrap app with `HelmetProvider`** in `src/main.tsx`
 
-**Location:** After line 436 (below the `<rr-resnova>` widget element)
+**3. Add `<Helmet>` to each page:**
 
-#### 2. Add Console Diagnostics for ResNova Widget
-Add logging to help trace when the widget loads successfully or fails, which can be shared with ResRequest for debugging.
+| Page | Title | Description |
+|------|-------|-------------|
+| `Index.tsx` | Aló Accommodation \| Farm Stay in Durbanville, Western Cape | Nestled in the Farmlands of Durbanville. Aló Accommodation offers a tranquil stay in the heart of the Western Cape countryside. Book your farm stay today. |
+| `Rooms.tsx` | Our Rooms \| Aló Accommodation | Explore 11 beautifully appointed rooms at Aló Accommodation. Each room offers comfort, scenic views, and a peaceful farm setting in Durbanville. |
+| `About.tsx` | About Us \| Aló Accommodation | Learn about Aló Accommodation, our team, and Lichtenburg Farm in Durbanville. A warm, welcoming farm stay in the Western Cape. |
+| `Contact.tsx` | Contact Us \| Aló Accommodation | Get in touch with Aló Accommodation. Located at Lichtenburg Farm, K11, R302, Klipheuwel Road, Durbanville. |
+| `HouseRules.tsx` | House Rules \| Aló Accommodation | Read the house rules for your stay at Aló Accommodation. |
+| `TermsAndConditions.tsx` | Terms & Conditions \| Aló Accommodation | Terms and conditions for booking at Aló Accommodation. |
 
-**File:** `src/pages/Rooms.tsx`
-
-**Changes in the useEffect block** (lines 321-328):
-- Log when the page loads
-- Log when the ResNova widget script is detected
-- Log when the custom element is defined (or not)
-- Add a check to see if the widget renders after a timeout
-
-This creates a paper trail that can be screenshotted and sent to ResRequest.
-
----
-
-### Technical Implementation Details
-
-**Contact Block Component** (inline in Rooms.tsx, around line 437):
-
-```text
-+---------------------------------------------+
-|        Having trouble booking?              |
-|                                             |
-|  If the online booking isn't loading or     |
-|  you're having issues, please contact us:   |
-|                                             |
-|  [Mail Icon] reservations@aloaccommodation.com  |
-|  [Phone Icon] (+27) 84 506 3119             |
-+---------------------------------------------+
-```
-
-**Diagnostic Console Logs** (in useEffect):
-- "ResNova: Page loaded, checking widget..."
-- "ResNova: Widget script detected/not detected"
-- "ResNova: Custom element defined successfully"
-- "ResNova: Widget render check after 5 seconds"
-
-These logs will appear in the browser console when guests report issues, making it easier to diagnose at what stage the widget is failing.
-
----
+**4. Custom Domain** — Connect `aloaccommodation.com` (or `.co.za`) via Settings → Domains to remove the `lovable.app` association from Google results. This is a settings change, not a code change.
 
 ### Files to Modify
-
-| File | Changes |
-|------|---------|
-| `src/pages/Rooms.tsx` | Add contact fallback block below widget; enhance useEffect with diagnostic logging |
-
----
-
-### What This Does NOT Fix
-
-The following issues require ResRequest/Sharon to investigate on their end:
-
-1. **Payment gateway geographic restrictions** - Their payment provider may block non-South African cards or IPs
-2. **API timeout for international requests** - Their server response times for overseas connections
-3. **Widget JavaScript errors** - Any bugs in the ResNova widget code itself
-4. **Basket/checkout flow logic** - The internal widget flow that processes room selection
-
-I recommend forwarding the diagnostic logs (once implemented) to Sharon along with the guest complaint details so ResRequest can trace the exact failure point in their system.
+| File | Change |
+|------|--------|
+| `src/main.tsx` | Add `HelmetProvider` wrapper |
+| `src/pages/Index.tsx` | Add `<Helmet>` with unique title/description |
+| `src/pages/Rooms.tsx` | Add `<Helmet>` with unique title/description |
+| `src/pages/About.tsx` | Add `<Helmet>` with unique title/description |
+| `src/pages/Contact.tsx` | Add `<Helmet>` with unique title/description |
+| `src/pages/HouseRules.tsx` | Add `<Helmet>` with unique title/description |
+| `src/pages/TermsAndConditions.tsx` | Add `<Helmet>` with unique title/description |
 
