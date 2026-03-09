@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://aloaccommodation.co.za/sitemap.xml
+Sitemap: https://aloaccommodation.com/sitemap.xml
