@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
@@ -9,6 +10,10 @@ import roomDetail1 from "@/assets/room-detail-1.png";
 const Contact = () => {
   return (
     <main className="min-h-screen">
+      <Helmet>
+        <title>Contact Us | Aló Accommodation</title>
+        <meta name="description" content="Get in touch with Aló Accommodation. Located at Lichtenburg Farm, K11, R302, Klipheuwel Road, Durbanville." />
+      </Helmet>
       <Navbar />
 
       {/* Hero */}

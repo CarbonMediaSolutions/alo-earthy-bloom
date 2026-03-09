@@ -1,9 +1,14 @@
+import { Helmet } from "react-helmet-async";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
 const TermsAndConditions = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Terms & Conditions | Aló Accommodation</title>
+        <meta name="description" content="Terms and conditions for booking at Aló Accommodation." />
+      </Helmet>
       <Navbar />
       
       {/* Hero Section */}

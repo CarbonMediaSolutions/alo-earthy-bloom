@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
@@ -32,6 +33,10 @@ const values = [
 const About = () => {
   return (
     <main className="min-h-screen">
+      <Helmet>
+        <title>About Us | Aló Accommodation</title>
+        <meta name="description" content="Learn about Aló Accommodation, our team, and Lichtenburg Farm in Durbanville. A warm, welcoming farm stay in the Western Cape." />
+      </Helmet>
       <Navbar />
 
       {/* SECTION 1 – HERO */}

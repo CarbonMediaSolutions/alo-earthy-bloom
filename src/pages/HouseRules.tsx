@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
@@ -81,6 +82,10 @@ const rules = [
 const HouseRules = () => {
   return (
     <main className="min-h-screen">
+      <Helmet>
+        <title>House Rules | Aló Accommodation</title>
+        <meta name="description" content="Read the house rules for your stay at Aló Accommodation." />
+      </Helmet>
       <Navbar />
 
       {/* Hero */}
