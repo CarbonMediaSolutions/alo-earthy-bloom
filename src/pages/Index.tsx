@@ -141,6 +141,10 @@ function FacilityCard({ icon: Icon, title, description }: FacilityCardProps) {
 const Index = () => {
   return (
     <main className="min-h-screen">
+      <Helmet>
+        <title>Aló Accommodation | Farm Stay in Durbanville, Western Cape</title>
+        <meta name="description" content="Nestled in the Farmlands of Durbanville. Aló Accommodation offers a tranquil stay in the heart of the Western Cape countryside. Book your farm stay today." />
+      </Helmet>
       <Navbar />
 
       {/* SECTION 1 — HERO */}

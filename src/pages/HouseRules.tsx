@@ -82,6 +82,10 @@ const rules = [
 const HouseRules = () => {
   return (
     <main className="min-h-screen">
+      <Helmet>
+        <title>House Rules | Aló Accommodation</title>
+        <meta name="description" content="Read the house rules for your stay at Aló Accommodation." />
+      </Helmet>
       <Navbar />
 
       {/* Hero */}
