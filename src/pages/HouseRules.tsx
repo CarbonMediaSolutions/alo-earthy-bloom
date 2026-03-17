@@ -84,7 +84,11 @@ const HouseRules = () => {
     <main className="min-h-screen">
       <Helmet>
         <title>House Rules | Aló Accommodation</title>
-        <meta name="description" content="Read the house rules for your stay at Aló Accommodation." />
+        <meta name="description" content="Read the house rules for your stay at Aló Accommodation. Check-in, check-out, security and pet policies." />
+        <link rel="canonical" href="https://aloaccommodation.com/house-rules" />
+        <meta property="og:title" content="House Rules | Aló Accommodation" />
+        <meta property="og:description" content="Read the house rules for your stay at Aló Accommodation." />
+        <meta property="og:url" content="https://aloaccommodation.com/house-rules" />
       </Helmet>
       <Navbar />
 

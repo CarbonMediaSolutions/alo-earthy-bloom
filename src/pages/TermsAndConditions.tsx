@@ -7,7 +7,11 @@ const TermsAndConditions = () => {
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Terms & Conditions | Aló Accommodation</title>
-        <meta name="description" content="Terms and conditions for booking at Aló Accommodation." />
+        <meta name="description" content="Terms and conditions for booking at Aló Accommodation. Cancellation policy, payment terms, and guest responsibilities." />
+        <link rel="canonical" href="https://aloaccommodation.com/terms-and-conditions" />
+        <meta property="og:title" content="Terms & Conditions | Aló Accommodation" />
+        <meta property="og:description" content="Terms and conditions for booking at Aló Accommodation." />
+        <meta property="og:url" content="https://aloaccommodation.com/terms-and-conditions" />
       </Helmet>
       <Navbar />
       
