@@ -13,6 +13,10 @@ const Contact = () => {
       <Helmet>
         <title>Contact Us | Aló Accommodation</title>
         <meta name="description" content="Get in touch with Aló Accommodation. Located at Lichtenburg Farm, K11, R302, Klipheuwel Road, Durbanville." />
+        <link rel="canonical" href="https://aloaccommodation.com/contact" />
+        <meta property="og:title" content="Contact Us | Aló Accommodation" />
+        <meta property="og:description" content="Get in touch with Aló Accommodation in Durbanville, Western Cape." />
+        <meta property="og:url" content="https://aloaccommodation.com/contact" />
       </Helmet>
       <Navbar />
 

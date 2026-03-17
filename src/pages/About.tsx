@@ -36,6 +36,10 @@ const About = () => {
       <Helmet>
         <title>About Us | Aló Accommodation</title>
         <meta name="description" content="Learn about Aló Accommodation, our team, and Lichtenburg Farm in Durbanville. A warm, welcoming farm stay in the Western Cape." />
+        <link rel="canonical" href="https://aloaccommodation.com/about" />
+        <meta property="og:title" content="About Us | Aló Accommodation" />
+        <meta property="og:description" content="Learn about Aló Accommodation, our team, and Lichtenburg Farm in Durbanville." />
+        <meta property="og:url" content="https://aloaccommodation.com/about" />
       </Helmet>
       <Navbar />
 

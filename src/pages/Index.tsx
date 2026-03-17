@@ -195,6 +195,7 @@ const Index = () => {
             alt="Aló Accommodation" 
             className="h-32 md:h-40 lg:h-48 w-auto mx-auto mb-6 animate-fade-up opacity-0"
           />
+          <h1 className="sr-only">Aló Accommodation – Farm Stay in Durbanville, Western Cape</h1>
           <p className="font-body text-primary-foreground text-xl md:text-2xl mb-12 animate-fade-up opacity-0 delay-200 tracking-wide hero-text-shadow">
             Nestled in the farmlands of Durbanville
           </p>

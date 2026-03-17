@@ -359,6 +359,10 @@ const Rooms = () => {
       <Helmet>
         <title>Our Rooms | Aló Accommodation</title>
         <meta name="description" content="Explore 11 beautifully appointed rooms at Aló Accommodation. Each room offers comfort, scenic views, and a peaceful farm setting in Durbanville." />
+        <link rel="canonical" href="https://aloaccommodation.com/rooms" />
+        <meta property="og:title" content="Our Rooms | Aló Accommodation" />
+        <meta property="og:description" content="Explore 11 beautifully appointed rooms at Aló Accommodation in Durbanville." />
+        <meta property="og:url" content="https://aloaccommodation.com/rooms" />
       </Helmet>
       <Navbar />
 
