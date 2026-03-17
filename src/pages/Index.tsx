@@ -144,6 +144,36 @@ const Index = () => {
       <Helmet>
         <title>Aló Accommodation | Farm Stay in Durbanville, Western Cape</title>
         <meta name="description" content="Nestled in the Farmlands of Durbanville. Aló Accommodation offers a tranquil stay in the heart of the Western Cape countryside. Book your farm stay today." />
+        <link rel="canonical" href="https://aloaccommodation.com/" />
+        <meta property="og:title" content="Aló Accommodation | Farm Stay in Durbanville, Western Cape" />
+        <meta property="og:description" content="Nestled in the Farmlands of Durbanville. Aló Accommodation offers a tranquil stay in the heart of the Western Cape countryside." />
+        <meta property="og:url" content="https://aloaccommodation.com/" />
+        <meta name="twitter:title" content="Aló Accommodation | Farm Stay in Durbanville, Western Cape" />
+        <meta name="twitter:description" content="Nestled in the Farmlands of Durbanville. Aló Accommodation offers a tranquil stay in the heart of the Western Cape countryside." />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LodgingBusiness",
+          "name": "Aló Accommodation",
+          "description": "Tranquil farm stay accommodation nestled in the farmlands of Durbanville, Western Cape.",
+          "url": "https://aloaccommodation.com",
+          "telephone": "+27845063119",
+          "email": "reservations@aloaccommodation.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Lichtenburg Farm, K11, R302, Klipheuwel Road",
+            "addressLocality": "Durbanville",
+            "addressRegion": "Western Cape",
+            "addressCountry": "ZA"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -33.8312,
+            "longitude": 18.6448
+          },
+          "priceRange": "$$",
+          "numberOfRooms": 11,
+          "image": "https://aloaccommodation.com/favicon.png"
+        })}</script>
       </Helmet>
       <Navbar />
 
