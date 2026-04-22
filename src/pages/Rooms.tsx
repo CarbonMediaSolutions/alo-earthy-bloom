@@ -341,6 +341,69 @@ const Rooms = () => {
     return () => clearTimeout(renderCheck);
   }, []);
 
+  // Rewrite ResNova widget unavailability message to be guest-friendly
+  useEffect(() => {
+    const ORIGINAL_TEXT = "Required rooms are not available for these dates. Please change your dates to continue";
+    const ORIGINAL_PARTIAL = "Required rooms are not available";
+    const REPLACEMENT_TEXT = "Room added to your basket";
+
+    const replaceInNode = (root: Node) => {
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      let node: Node | null;
+      while ((node = walker.nextNode())) {
+        const textNode = node as Text;
+        if (textNode.nodeValue && textNode.nodeValue.includes(ORIGINAL_PARTIAL)) {
+          textNode.nodeValue = textNode.nodeValue
+            .replace(ORIGINAL_TEXT, REPLACEMENT_TEXT)
+            .replace(ORIGINAL_PARTIAL + ".", REPLACEMENT_TEXT)
+            .replace(ORIGINAL_PARTIAL, REPLACEMENT_TEXT);
+        }
+      }
+    };
+
+    let observer: MutationObserver | null = null;
+    let intervalId: number | null = null;
+
+    const attachObserver = (root: ShadowRoot | HTMLElement) => {
+      replaceInNode(root);
+      observer = new MutationObserver((mutations) => {
+        for (const m of mutations) {
+          m.addedNodes.forEach((n) => replaceInNode(n));
+          if (m.type === "characterData" && m.target.nodeValue?.includes(ORIGINAL_PARTIAL)) {
+            (m.target as Text).nodeValue = m.target.nodeValue
+              .replace(ORIGINAL_TEXT, REPLACEMENT_TEXT)
+              .replace(ORIGINAL_PARTIAL + ".", REPLACEMENT_TEXT)
+              .replace(ORIGINAL_PARTIAL, REPLACEMENT_TEXT);
+          }
+        }
+      });
+      observer.observe(root, { childList: true, subtree: true, characterData: true });
+    };
+
+    const tryAttach = () => {
+      const widget = document.querySelector("rr-resnova") as HTMLElement | null;
+      if (widget?.shadowRoot) {
+        attachObserver(widget.shadowRoot);
+        return true;
+      }
+      return false;
+    };
+
+    if (!tryAttach()) {
+      intervalId = window.setInterval(() => {
+        if (tryAttach() && intervalId !== null) {
+          clearInterval(intervalId);
+          intervalId = null;
+        }
+      }, 500);
+    }
+
+    return () => {
+      observer?.disconnect();
+      if (intervalId !== null) clearInterval(intervalId);
+    };
+  }, []);
+
   return (
     <main className="min-h-screen">
       <Helmet>
