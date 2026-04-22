@@ -1,83 +1,39 @@
 
 
-## Add Booking Fallback Contact + Diagnostics
+## Remove Rates from Room Cards & Reword Booking Widget Message
 
-### Problem Summary
-International guests (USA, Germany, Canada) experience infinite loading when trying to complete bookings through the ResNova widget. The issue occurs at the "Add booking" or checkout stage and is a ResNova/ResRequest backend issue that cannot be fixed on the website.
+### What you asked for
 
-### What We Will Implement
-
-#### 1. Add "Having Trouble Booking?" Contact Block
-Add a visible help section below the booking widget with contact options for guests who encounter issues.
-
-**File:** `src/pages/Rooms.tsx`
-
-**Changes:**
-- Add a styled box below the ResNova widget with:
-  - Heading: "Having trouble booking?"
-  - Subtext: "If the online booking isn't loading or you're having issues, please contact us directly:"
-  - Email link: reservations@aloaccommodation.com (click-to-email)
-  - Phone link: (+27) 84 506 3119 (click-to-call)
-
-**Location:** After line 436 (below the `<rr-resnova>` widget element)
-
-#### 2. Add Console Diagnostics for ResNova Widget
-Add logging to help trace when the widget loads successfully or fails, which can be shared with ResRequest for debugging.
-
-**File:** `src/pages/Rooms.tsx`
-
-**Changes in the useEffect block** (lines 321-328):
-- Log when the page loads
-- Log when the ResNova widget script is detected
-- Log when the custom element is defined (or not)
-- Add a check to see if the widget renders after a timeout
-
-This creates a paper trail that can be screenshotted and sent to ResRequest.
+1. The "Explore Our Accommodation" cards on the **Rooms** page still show old rates (e.g. `R1,815`, `R1,210`). Remove these prices entirely so guests aren't confused or able to demand the old rate. The cards become **info-only summaries**. Only the live booking widget (which has the correct, current pricing) should ever display amounts.
+2. The ResNova booking widget currently shows: *"Required rooms are not available for these dates. Please change your dates to continue"* when a room has actually been added to the basket. Replace that wording with: *"Room added to your basket"* so guests understand the room is reserved in their basket, not unavailable.
 
 ---
 
-### Technical Implementation Details
+### Changes
 
-**Contact Block Component** (inline in Rooms.tsx, around line 437):
+**1. `src/pages/Rooms.tsx` — Remove price from summary cards**
+- Remove the `price` prop from the `RoomCardProps` interface and from the `RoomCard` JSX (the `<span>` showing `{price}` next to the room name).
+- Remove the `price` field from each of the 11 entries in the `rooms` array (keeps the data clean).
+- Layout adjustment: the room title `<h3>` will fill the row that previously had the price beside it — no other styling changes.
 
-```text
-+---------------------------------------------+
-|        Having trouble booking?              |
-|                                             |
-|  If the online booking isn't loading or     |
-|  you're having issues, please contact us:   |
-|                                             |
-|  [Mail Icon] reservations@aloaccommodation.com  |
-|  [Phone Icon] (+27) 84 506 3119             |
-+---------------------------------------------+
-```
+Result: each card shows room name, sleeps, bed config, included icons (WiFi/parking/bathroom), description, and the "Check Availability" button. No prices anywhere on these cards.
 
-**Diagnostic Console Logs** (in useEffect):
-- "ResNova: Page loaded, checking widget..."
-- "ResNova: Widget script detected/not detected"
-- "ResNova: Custom element defined successfully"
-- "ResNova: Widget render check after 5 seconds"
+**2. `src/pages/Rooms.tsx` — Replace ResNova widget message text**
+The ResNova widget renders inside a Shadow DOM, so we can't simply edit a React string. We'll add a small `useEffect` that:
+- Locates the `<rr-resnova>` element and its `shadowRoot`.
+- Uses a `MutationObserver` to watch for any text node containing `"Required rooms are not available"` (the full sentence including "Please change your dates to continue").
+- Replaces that text with `"Room added to your basket"` whenever it appears (re-runs on every widget re-render, e.g. after date changes).
+- Cleans up the observer on unmount.
 
-These logs will appear in the browser console when guests report issues, making it easier to diagnose at what stage the widget is failing.
+This is a safe, non-invasive override — it doesn't modify the third-party widget's behaviour, only the displayed copy. If ResNova ever changes the original wording, we'd just update the matched string.
 
 ---
 
-### Files to Modify
+### Files modified
 
-| File | Changes |
-|------|---------|
-| `src/pages/Rooms.tsx` | Add contact fallback block below widget; enhance useEffect with diagnostic logging |
+| File | Change |
+|------|--------|
+| `src/pages/Rooms.tsx` | Strip `price` from `rooms` data array, `RoomCardProps`, and `RoomCard` JSX. Add `useEffect` with shadow-DOM `MutationObserver` to rewrite the unavailability message to "Room added to your basket". |
 
----
-
-### What This Does NOT Fix
-
-The following issues require ResRequest/Sharon to investigate on their end:
-
-1. **Payment gateway geographic restrictions** - Their payment provider may block non-South African cards or IPs
-2. **API timeout for international requests** - Their server response times for overseas connections
-3. **Widget JavaScript errors** - Any bugs in the ResNova widget code itself
-4. **Basket/checkout flow logic** - The internal widget flow that processes room selection
-
-I recommend forwarding the diagnostic logs (once implemented) to Sharon along with the guest complaint details so ResRequest can trace the exact failure point in their system.
+No other files need changes. The widget itself, pricing inside the widget, and all other pages remain untouched.
 
