@@ -105,7 +105,6 @@ const rooms = [
     name: "Room 2",
     description: "Sleeps two with one double bed. Includes table and seating inside, kitchenette with complimentary coffee, tea and sugar, private bathroom with shower and towels, and outside seating.",
     images: [room2_1, room2_2, room2_3, room2_4, room2_5, room2_6, room2_7, room2_8, room2_9, room2_10],
-    price: "R1,210",
     sleeps: 2,
     beds: "1 Double Bed",
   },
@@ -113,7 +112,6 @@ const rooms = [
     name: "Room 3",
     description: "Sleeps two with one double bed. Includes table and seating inside, kitchenette with complimentary coffee, tea and sugar, private bathroom with shower and towels, and outside seating.",
     images: [room3_1, room3_2, room3_3, room3_4, room3_5, room3_6, room3_7],
-    price: "R1,210",
     sleeps: 2,
     beds: "1 Double Bed",
   },
@@ -121,7 +119,6 @@ const rooms = [
     name: "Room 4",
     description: "Sleeps three with one double bed and one single bed. Includes table and seating inside, kitchenette with complimentary coffee, tea and sugar, private bathroom with shower and towels, and outside seating.",
     images: [room4_1, room4_2, room4_3, room4_4, room4_5, room4_6, room4_7, room4_8, room4_9, room4_10],
-    price: "R1,634",
     sleeps: 3,
     beds: "1 Double Bed + 1 Single Bed",
   },
@@ -129,7 +126,6 @@ const rooms = [
     name: "Groom's Room",
     description: "Double-sized suite perfect for wedding parties. Fully equipped kitchenette, clothing rack, iron and ironing board, and space for six groomsmen to prepare.",
     images: [room5_1, room5_2, room5_3, room5_4, room5_5, room5_6, room5_7],
-    price: "R1,815",
     sleeps: 2,
     beds: "1 Double Bed",
   },
@@ -137,7 +133,6 @@ const rooms = [
     name: "Room 6",
     description: "Sleeps two with one double bed. Includes table and seating inside, kitchenette with complimentary coffee, tea and sugar, private bathroom with shower and towels, and outside seating.",
     images: [room6_1, room6_2, room6_3, room6_4, room6_5, room6_6, room6_7, room6_8],
-    price: "R1,210",
     sleeps: 2,
     beds: "1 Double Bed",
   },
@@ -145,7 +140,6 @@ const rooms = [
     name: "Room 7",
     description: "Sleeps two with one double bed. Includes table and seating inside, kitchenette with complimentary coffee, tea and sugar, private bathroom with shower and towels, and outside seating.",
     images: [room7_1, room7_2, room7_3, room7_4, room7_5, room7_6, room7_7],
-    price: "R1,210",
     sleeps: 2,
     beds: "1 Double Bed",
   },
@@ -153,7 +147,6 @@ const rooms = [
     name: "Room 8",
     description: "Sleeps two with one double bed. Includes table and seating inside, kitchenette with complimentary coffee, tea and sugar, private bathroom with shower and towels, and outside seating.",
     images: [room8_1, room8_2, room8_3, room8_4, room8_5, room8_6, room8_7],
-    price: "R1,210",
     sleeps: 2,
     beds: "1 Double Bed",
   },
@@ -161,7 +154,6 @@ const rooms = [
     name: "Room 9",
     description: "Sleeps two with one double bed. Includes table and seating inside, kitchenette with complimentary coffee, tea and sugar, private bathroom with shower and towels, and outside seating.",
     images: [room9_1, room9_2, room9_3, room9_4, room9_5, room9_6],
-    price: "R1,210",
     sleeps: 2,
     beds: "1 Double Bed",
   },
@@ -169,7 +161,6 @@ const rooms = [
     name: "Room 10",
     description: "Sleeps two with one double bed. Includes table and seating inside, kitchenette with complimentary coffee, tea and sugar, private bathroom with shower and towels, and outside seating.",
     images: [room10_1, room10_2, room10_3, room10_4, room10_5],
-    price: "R1,210",
     sleeps: 2,
     beds: "1 Double Bed",
   },
@@ -177,7 +168,6 @@ const rooms = [
     name: "Room 11",
     description: "Sleeps two with one double bed. Includes table and seating inside, kitchenette with complimentary coffee, tea and sugar, private bathroom with shower and towels, and outside seating.",
     images: [room11_1, room11_2, room11_3, room11_4, room11_5, room11_6, room11_7, room11_8],
-    price: "R1,210",
     sleeps: 2,
     beds: "1 Double Bed",
   },
@@ -187,12 +177,11 @@ interface RoomCardProps {
   name: string;
   description: string;
   images: string[];
-  price: string;
   sleeps: number;
   beds: string;
 }
 
-function RoomCard({ name, description, images, price, sleeps, beds }: RoomCardProps) {
+function RoomCard({ name, description, images, sleeps, beds }: RoomCardProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const hasMultipleImages = images.length > 1;
 
@@ -262,9 +251,8 @@ function RoomCard({ name, description, images, price, sleeps, beds }: RoomCardPr
       
       {/* Content */}
       <div className="p-6">
-        <div className="flex items-start justify-between mb-3">
+        <div className="mb-3">
           <h3 className="font-heading text-xl text-foreground">{name}</h3>
-          <span className="font-heading text-lg text-primary font-medium">{price}</span>
         </div>
         
         {/* Room details */}
