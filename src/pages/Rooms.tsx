@@ -98,7 +98,6 @@ const rooms = [
     name: "Room 1",
     description: "Sleeps four with one double bed and two single beds. Includes table and seating inside, kitchenette with complimentary coffee, tea and sugar, private bathroom with shower and towels, and outside seating.",
     images: [room1_1, room1_2, room1_3, room1_4, room1_5, room1_6],
-    price: "R1,815",
     sleeps: 4,
     beds: "1 Double Bed + 2 Single Beds",
   },
