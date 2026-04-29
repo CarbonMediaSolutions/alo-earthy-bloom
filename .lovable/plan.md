@@ -1,39 +1,34 @@
+## Fix Favicon — Cream Background Version
 
+### What you chose
+Option C: yellow "a" on a soft cream rounded-square background — clean, neutral, visible on both light and dark browser tabs.
 
-## Remove Rates from Room Cards & Reword Booking Widget Message
+### What I'll do
 
-### What you asked for
+1. **Generate a new favicon** (`public/favicon.png`, 512×512) that composites the existing yellow "a" mark onto a cream (#F2EEE0 — your brand's Dusty Clouds Light) rounded-square background with subtle padding so the letter breathes.
+2. **Generate a true multi-resolution `favicon.ico`** (16/32/48 px) from the same artwork so Windows/older browsers render crisply instead of showing a broken tile.
+3. **Generate `apple-touch-icon.png`** (180×180) with the same cream background — iOS home-screen icons don't support transparency cleanly, so this prevents a black square on iPhone bookmarks.
+4. **Update `index.html`** to:
+   - Add cache-busting query strings (`?v=2`) so browsers fetch the new files immediately instead of serving the old broken cache.
+   - Add an explicit `apple-touch-icon` link pointing at the new 180×180 file.
+   - Keep the existing `<link rel="icon" type="image/png" href="/favicon.png">` but bumped to `?v=2`.
+   - Add `<link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">` for legacy fallback.
 
-1. The "Explore Our Accommodation" cards on the **Rooms** page still show old rates (e.g. `R1,815`, `R1,210`). Remove these prices entirely so guests aren't confused or able to demand the old rate. The cards become **info-only summaries**. Only the live booking widget (which has the correct, current pricing) should ever display amounts.
-2. The ResNova booking widget currently shows: *"Required rooms are not available for these dates. Please change your dates to continue"* when a room has actually been added to the basket. Replace that wording with: *"Room added to your basket"* so guests understand the room is reserved in their basket, not unavailable.
+### Technical notes
 
----
-
-### Changes
-
-**1. `src/pages/Rooms.tsx` — Remove price from summary cards**
-- Remove the `price` prop from the `RoomCardProps` interface and from the `RoomCard` JSX (the `<span>` showing `{price}` next to the room name).
-- Remove the `price` field from each of the 11 entries in the `rooms` array (keeps the data clean).
-- Layout adjustment: the room title `<h3>` will fill the row that previously had the price beside it — no other styling changes.
-
-Result: each card shows room name, sleeps, bed config, included icons (WiFi/parking/bathroom), description, and the "Check Availability" button. No prices anywhere on these cards.
-
-**2. `src/pages/Rooms.tsx` — Replace ResNova widget message text**
-The ResNova widget renders inside a Shadow DOM, so we can't simply edit a React string. We'll add a small `useEffect` that:
-- Locates the `<rr-resnova>` element and its `shadowRoot`.
-- Uses a `MutationObserver` to watch for any text node containing `"Required rooms are not available"` (the full sentence including "Please change your dates to continue").
-- Replaces that text with `"Room added to your basket"` whenever it appears (re-runs on every widget re-render, e.g. after date changes).
-- Cleans up the observer on unmount.
-
-This is a safe, non-invasive override — it doesn't modify the third-party widget's behaviour, only the displayed copy. If ResNova ever changes the original wording, we'd just update the matched string.
-
----
+- I'll use ImageMagick (via `nix run nixpkgs#imagemagick`) to composite the new favicon. The source for the "a" mark is the existing `public/favicon.png`; I'll trim its transparent margins, then center it on a cream rounded-square canvas with ~12% padding.
+- The `.ico` will be a real ICO container with 16/32/48 layers, not a renamed PNG.
+- Cream chosen: `#F2EEE0` (matches `--cream` token in `src/index.css`, HSL 47 21% 92%).
+- No code changes outside `index.html` and the three image files in `public/`.
 
 ### Files modified
 
 | File | Change |
 |------|--------|
-| `src/pages/Rooms.tsx` | Strip `price` from `rooms` data array, `RoomCardProps`, and `RoomCard` JSX. Add `useEffect` with shadow-DOM `MutationObserver` to rewrite the unavailability message to "Room added to your basket". |
+| `public/favicon.png` | Replaced — yellow "a" centered on cream rounded square, 512×512 |
+| `public/favicon.ico` | Replaced — true multi-res ICO (16/32/48) with cream background |
+| `public/apple-touch-icon.png` | New — 180×180 cream-background version for iOS |
+| `index.html` | Add `?v=2` cache-busters, add `.ico` and `apple-touch-icon` links |
 
-No other files need changes. The widget itself, pricing inside the widget, and all other pages remain untouched.
-
+### What you'll see
+After deploy, hard-refresh the tab (Cmd/Ctrl+Shift+R). The browser tab, bookmarks bar, and iOS home-screen will all show the yellow "a" inside a soft cream rounded square — clearly visible on white, dark, and coloured tab backgrounds.
