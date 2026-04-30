@@ -1,34 +1,62 @@
-## Fix Favicon — Cream Background Version
+## Favicon Audit Report — Google Search Compatibility
 
-### What you chose
-Option C: yellow "a" on a soft cream rounded-square background — clean, neutral, visible on both light and dark browser tabs.
+### Step 1: index.html `<head>` audit
 
-### What I'll do
+Current tags:
+```html
+<link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
+```
 
-1. **Generate a new favicon** (`public/favicon.png`, 512×512) that composites the existing yellow "a" mark onto a cream (#F2EEE0 — your brand's Dusty Clouds Light) rounded-square background with subtle padding so the letter breathes.
-2. **Generate a true multi-resolution `favicon.ico`** (16/32/48 px) from the same artwork so Windows/older browsers render crisply instead of showing a broken tile.
-3. **Generate `apple-touch-icon.png`** (180×180) with the same cream background — iOS home-screen icons don't support transparency cleanly, so this prevents a black square on iPhone bookmarks.
-4. **Update `index.html`** to:
-   - Add cache-busting query strings (`?v=2`) so browsers fetch the new files immediately instead of serving the old broken cache.
-   - Add an explicit `apple-touch-icon` link pointing at the new 180×180 file.
-   - Keep the existing `<link rel="icon" type="image/png" href="/favicon.png">` but bumped to `?v=2`.
-   - Add `<link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">` for legacy fallback.
+- All three href paths exist in `public/`. No broken paths.
+- No duplicates.
+- Missing: a 32x32 PNG and an explicit 192x192 PNG (Google's recommended baseline). Google Search specifically looks for a multiple-of-48 square icon and prefers `192x192`. We currently only declare `512x512`, which Google accepts but is less reliable.
 
-### Technical notes
+### Step 2: favicon files audit
 
-- I'll use ImageMagick (via `nix run nixpkgs#imagemagick`) to composite the new favicon. The source for the "a" mark is the existing `public/favicon.png`; I'll trim its transparent margins, then center it on a cream rounded-square canvas with ~12% padding.
-- The `.ico` will be a real ICO container with 16/32/48 layers, not a renamed PNG.
-- Cream chosen: `#F2EEE0` (matches `--cream` token in `src/index.css`, HSL 47 21% 92%).
-- No code changes outside `index.html` and the three image files in `public/`.
+| File | Dimensions | Square? | Notes |
+|---|---|---|---|
+| `public/favicon.png` | 512×512 | Yes | Good — meets Google's "multiples of 48" rule |
+| `public/favicon.ico` | 48 + 32 + 16 multi-res | Yes | True multi-resolution ICO, correct |
+| `public/apple-touch-icon.png` | 180×180 | Yes | Correct iOS size |
 
-### Files modified
+- Missing for full Google coverage: dedicated `favicon-32.png` and `favicon-192.png`. The 512 PNG technically works, but having a 192 explicitly declared matches Google's documented preference and improves crawler reliability.
+
+### Step 3: robots.txt audit
+
+- No `Disallow` rules anywhere — all paths (including `/favicon.*`) are open.
+- Googlebot and Googlebot-Image are not blocked. (Googlebot-Image is implicitly covered by `User-agent: *  Allow: /`.)
+- Sitemap correctly declared.
+
+Verdict: robots.txt is clean, no changes needed.
+
+### Step 4: Fixes to apply
+
+1. Generate `public/favicon-32.png` (32×32) by downscaling `favicon.png` with ImageMagick, preserving the cream square + yellow "a".
+2. Generate `public/favicon-192.png` (192×192) the same way.
+3. Generate `public/favicon-512.png` (512×512) — a renamed/explicit copy of the existing 512 master, so the `<link sizes="512x512">` href matches the filename Google's docs use.
+4. Update `index.html` `<head>` to declare the full standard set, bumping cache-buster to `?v=3`:
+   ```html
+   <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3">
+   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3">
+   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png?v=3">
+   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=3">
+   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3">
+   ```
+5. Keep the existing `favicon.png` in place (legacy fallback for any tool that requests `/favicon.png` without a sized hint).
+
+### Step 5: Verification
+
+After applying, I'll re-run `identify` on every referenced file to confirm dimensions match the declared `sizes` attributes, and list the final `<head>` block.
+
+### Files to modify
 
 | File | Change |
-|------|--------|
-| `public/favicon.png` | Replaced — yellow "a" centered on cream rounded square, 512×512 |
-| `public/favicon.ico` | Replaced — true multi-res ICO (16/32/48) with cream background |
-| `public/apple-touch-icon.png` | New — 180×180 cream-background version for iOS |
-| `index.html` | Add `?v=2` cache-busters, add `.ico` and `apple-touch-icon` links |
+|---|---|
+| `public/favicon-32.png` | New — 32×32 downscale |
+| `public/favicon-192.png` | New — 192×192 downscale |
+| `public/favicon-512.png` | New — explicit 512×512 copy |
+| `index.html` | Replace favicon link block with full Google-recommended set, bump to `?v=3` |
 
-### What you'll see
-After deploy, hard-refresh the tab (Cmd/Ctrl+Shift+R). The browser tab, bookmarks bar, and iOS home-screen will all show the yellow "a" inside a soft cream rounded square — clearly visible on white, dark, and coloured tab backgrounds.
+No changes to `robots.txt`, `favicon.ico`, `favicon.png`, or `apple-touch-icon.png` — they're already correct.
