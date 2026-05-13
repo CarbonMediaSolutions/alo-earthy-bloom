@@ -1,62 +1,29 @@
-## Favicon Audit Report — Google Search Compatibility
+## Plan: Add 48x48 favicon variant
 
-### Step 1: index.html `<head>` audit
+### Steps
 
-Current tags:
-```html
-<link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
-<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
-```
+1. **Generate `public/favicon-48.png`** — downscale the existing `public/favicon.png` (512×512 cream square + yellow "a") to 48×48 using ImageMagick. Keep `public/favicon.png` untouched as the 1024/512 master used by social meta tags.
 
-- All three href paths exist in `public/`. No broken paths.
-- No duplicates.
-- Missing: a 32x32 PNG and an explicit 192x192 PNG (Google's recommended baseline). Google Search specifically looks for a multiple-of-48 square icon and prefers `192x192`. We currently only declare `512x512`, which Google accepts but is less reliable.
-
-### Step 2: favicon files audit
-
-| File | Dimensions | Square? | Notes |
-|---|---|---|---|
-| `public/favicon.png` | 512×512 | Yes | Good — meets Google's "multiples of 48" rule |
-| `public/favicon.ico` | 48 + 32 + 16 multi-res | Yes | True multi-resolution ICO, correct |
-| `public/apple-touch-icon.png` | 180×180 | Yes | Correct iOS size |
-
-- Missing for full Google coverage: dedicated `favicon-32.png` and `favicon-192.png`. The 512 PNG technically works, but having a 192 explicitly declared matches Google's documented preference and improves crawler reliability.
-
-### Step 3: robots.txt audit
-
-- No `Disallow` rules anywhere — all paths (including `/favicon.*`) are open.
-- Googlebot and Googlebot-Image are not blocked. (Googlebot-Image is implicitly covered by `User-agent: *  Allow: /`.)
-- Sitemap correctly declared.
-
-Verdict: robots.txt is clean, no changes needed.
-
-### Step 4: Fixes to apply
-
-1. Generate `public/favicon-32.png` (32×32) by downscaling `favicon.png` with ImageMagick, preserving the cream square + yellow "a".
-2. Generate `public/favicon-192.png` (192×192) the same way.
-3. Generate `public/favicon-512.png` (512×512) — a renamed/explicit copy of the existing 512 master, so the `<link sizes="512x512">` href matches the filename Google's docs use.
-4. Update `index.html` `<head>` to declare the full standard set, bumping cache-buster to `?v=3`:
+2. **Update `index.html` favicon block** — add a new link tag for the 48×48 variant alongside the existing ones, bumping the cache-buster to `?v=4`:
    ```html
-   <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3">
-   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3">
-   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png?v=3">
-   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=3">
-   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3">
+   <link rel="icon" type="image/x-icon" href="/favicon.ico?v=4">
+   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=4">
+   <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png?v=4">
+   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png?v=4">
+   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=4">
+   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4">
    ```
-5. Keep the existing `favicon.png` in place (legacy fallback for any tool that requests `/favicon.png` without a sized hint).
 
-### Step 5: Verification
+3. **Leave social meta tags alone** — `og:image` continues to point at `/favicon.png` (the 512px master). No changes there.
 
-After applying, I'll re-run `identify` on every referenced file to confirm dimensions match the declared `sizes` attributes, and list the final `<head>` block.
+### Note on the href
 
-### Files to modify
+Your example uses an absolute URL (`https://screenimage.co.za/favicon-48.png`) — that's a different domain. I'll host the file on this project at `/favicon-48.png` (served from `aloaccommodation.com`) and use a root-relative href. If you actually want to point to the screenimage.co.za URL, let me know and I'll use that string verbatim instead.
+
+### Files
 
 | File | Change |
 |---|---|
-| `public/favicon-32.png` | New — 32×32 downscale |
-| `public/favicon-192.png` | New — 192×192 downscale |
-| `public/favicon-512.png` | New — explicit 512×512 copy |
-| `index.html` | Replace favicon link block with full Google-recommended set, bump to `?v=3` |
-
-No changes to `robots.txt`, `favicon.ico`, `favicon.png`, or `apple-touch-icon.png` — they're already correct.
+| `public/favicon-48.png` | New — 48×48 downscale of `favicon.png` |
+| `public/favicon.png` | Unchanged (kept as 512px master for social) |
+| `index.html` | Add 48×48 link tag, bump cache-buster to `?v=4` |
